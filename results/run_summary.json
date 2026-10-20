@@ -1,0 +1,83 @@
+{
+  "final_run_dir": "work/c10000 (not committed: contains large SQLite working files)",
+  "source_rows": 660622,
+  "quarantined_not_completed": 560652,
+  "quarantine_reasons": {
+    "not_attempted_budget_limit": 560609,
+    "evidence_not_exact_substring": 29,
+    "empty_review_text": 13,
+    "invalid_field_value": 1
+  },
+  "classified": 99970,
+  "classified_fraction_of_labelable": 0.15133,
+  "model_calls_logged": 2854,
+  "failed_calls": 5,
+  "api_cost_usd_logged": 5.1145,
+  "enrich_calls_by_attempt_number": {
+    "1": 1564,
+    "2": 423,
+    "3": 56
+  },
+  "stages": [
+    {
+      "role": "enrich",
+      "model": "claude-haiku-5-5",
+      "phase": "initial",
+      "calls": 1112,
+      "failed": 0,
+      "input_tokens": 5468636,
+      "output_tokens": 3366251,
+      "usd": 2.23,
+      "seconds": 10574.36
+    },
+    {
+      "role": "enrich",
+      "model": "claude-haiku-5-5",
+      "phase": "resume",
+      "calls": 931,
+      "failed": 5,
+      "input_tokens": 4543367,
+      "output_tokens": 2732161,
+      "usd": 1.8269,
+      "seconds": 9463.84
+    },
+    {
+      "role": "group",
+      "model": "claude-haiku-5-5",
+      "phase": "initial",
+      "calls": 797,
+      "failed": 0,
+      "input_tokens": 2996749,
+      "output_tokens": 814464,
+      "usd": 0.7069,
+      "seconds": 3431.71
+    },
+    {
+      "role": "memo",
+      "model": "claude-sonnet-5-5",
+      "phase": "initial",
+      "calls": 2,
+      "failed": 0,
+      "input_tokens": 4356,
+      "output_tokens": 3000,
+      "usd": 0.0387,
+      "seconds": 24.51
+    },
+    {
+      "role": "verify",
+      "model": "claude-sonnet-5-5",
+      "phase": "initial",
+      "calls": 12,
+      "failed": 0,
+      "input_tokens": 48395,
+      "output_tokens": 21516,
+      "usd": 0.312,
+      "seconds": 121.84
+    }
+  ],
+  "notes": [
+    "Costs are computed from logged token usage and cost/rates.json; reconcile with the provider's usage dashboard.",
+    "Run used up to 3 attempts per batch before the retry limit was reduced to 2; 56 enrich calls were a third attempt.",
+    "Wall time is the sum of per-call seconds across overlapping workers, not elapsed time."
+  ]
+}

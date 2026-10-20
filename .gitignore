@@ -1,0 +1,12 @@
+.env
+.env.*
+!.env.example
+*.docx
+data/spotify_reviews_18months.csv
+__pycache__/
+Downloads/
+.claude/settings.local.json
+# large working files (regenerable; the evidence is exported to grading/, results/, cost/, evals/)
+work/
+data/sample_100k.csv
+.claude/launch.json

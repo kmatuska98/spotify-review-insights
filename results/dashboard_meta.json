@@ -1,0 +1,2 @@
+{"evaluation": {"golden_v1": "78% / 90% / 88%"},
+ "notes": "Scope: a seeded random sample of 100,000 of the 660,622 reviews (15.1%); the rest are quarantined as not processed. Golden-50 numbers are from the first run, before any rule changes; later rule changes were informed by golden disagreements (disclosed in README). Labels come from Claude Haiku 5.5; the verifier is Claude Sonnet 5.5 working blind."}

@@ -1,0 +1,445 @@
+{
+  "group_config": "claude-haiku-5-5+group-v1",
+  "issues": [
+    {
+      "name": "Phone number login rejected or check-number error",
+      "description": "Users entering their mobile number get 'check your number', 'try with different number', or OTP failures and cannot log in with it.",
+      "issue_id": "ISS-001",
+      "topic": "access"
+    },
+    {
+      "name": "Persistent 'Something went wrong' error on login",
+      "description": "Login fails with a generic 'Something went wrong' or 'try again' message that persists despite reinstalling or clearing cache.",
+      "issue_id": "ISS-002",
+      "topic": "access"
+    },
+    {
+      "name": "False 'no internet connection' error while online",
+      "description": "App reports no internet or offline status even though the device has working Wi-Fi or mobile data and other apps function normally.",
+      "issue_id": "ISS-003",
+      "topic": "access"
+    },
+    {
+      "name": "Logged out unexpectedly and cannot log back in",
+      "description": "The account is logged out without prompting (often after an update or closing the app) and the user then cannot sign back in, including rejected passwords.",
+      "issue_id": "ISS-004",
+      "topic": "access"
+    },
+    {
+      "name": "Password recovery and login-without-password not working",
+      "description": "Users cannot reset or recover a forgotten password, and the 'login without password' option fails or is unavailable.",
+      "issue_id": "ISS-005",
+      "topic": "access"
+    },
+    {
+      "name": "Facebook or Google sign-in problems and linked account loss",
+      "description": "Login through Facebook or Google fails, or users lose access to accounts linked to a Facebook profile they no longer have.",
+      "issue_id": "ISS-006",
+      "topic": "access"
+    },
+    {
+      "name": "App won't open or shows blank library after update",
+      "description": "App fails to open, shows only a green icon, or displays a black screen with no playlists, liked songs, or library content after updating or reinstalling.",
+      "issue_id": "ISS-007",
+      "topic": "access"
+    },
+    {
+      "name": "Regional and age restriction access blocks",
+      "description": "Users are blocked from using the app in certain countries such as Iran, or are rejected for entering a birth year such as 2013, or cannot install on certain devices like Galaxy Watch.",
+      "issue_id": "ISS-008",
+      "topic": "access"
+    },
+    {
+      "name": "Other access problems",
+      "description": "access complaints that fit no named issue",
+      "catch_all": true,
+      "issue_id": "ISS-009",
+      "topic": "access"
+    },
+    {
+      "name": "Skips limited to six per hour",
+      "description": "Free users complain they can only skip a capped number of songs (e.g., 6 per hour or per day).",
+      "issue_id": "ISS-010",
+      "topic": "billing"
+    },
+    {
+      "name": "Cannot choose specific songs without premium",
+      "description": "Free users cannot pick a specific song to play, restricted to shuffle or Spotify-chosen tracks.",
+      "issue_id": "ISS-011",
+      "topic": "billing"
+    },
+    {
+      "name": "Lyrics locked behind premium paywall",
+      "description": "Viewing or loading song lyrics now requires a premium subscription.",
+      "issue_id": "ISS-012",
+      "topic": "billing"
+    },
+    {
+      "name": "Seeking and rewinding restricted to premium",
+      "description": "Free users cannot scrub, rewind, forward, or jump to parts of a song without paying.",
+      "issue_id": "ISS-013",
+      "topic": "billing"
+    },
+    {
+      "name": "Playlist and repeat features gated to premium",
+      "description": "Free users cannot play playlists in order, repeat tracks, or turn off shuffle without premium.",
+      "issue_id": "ISS-014",
+      "topic": "billing"
+    },
+    {
+      "name": "Premium purchase fails or won't process",
+      "description": "Users cannot subscribe or buy premium: the payment screen does not appear, connection errors occur, or gift cards are rejected.",
+      "issue_id": "ISS-015",
+      "topic": "billing"
+    },
+    {
+      "name": "Charged after cancelling or missed payment",
+      "description": "Users report being billed after unsubscribing or confusion over charges and payment status.",
+      "issue_id": "ISS-016",
+      "topic": "billing"
+    },
+    {
+      "name": "Premium price too high",
+      "description": "Users say the premium subscription costs too much and call for lower prices.",
+      "issue_id": "ISS-017",
+      "topic": "billing"
+    },
+    {
+      "name": "Other billing problems",
+      "description": "billing complaints that fit no named issue",
+      "catch_all": true,
+      "issue_id": "ISS-018",
+      "topic": "billing"
+    },
+    {
+      "name": "Lyrics not loading or missing",
+      "description": "Complaints that lyrics fail to display, show 'Couldn't load the lyrics', are missing for specific songs, or are wrong.",
+      "issue_id": "ISS-019",
+      "topic": "catalog"
+    },
+    {
+      "name": "Shuffle and playlists playing unwanted recommended songs",
+      "description": "Complaints that recommended or unrelated songs are inserted into the user's own playlists or that playback ignores the chosen playlist.",
+      "issue_id": "ISS-020",
+      "topic": "catalog"
+    },
+    {
+      "name": "Shuffle repeats the same songs repeatedly",
+      "description": "Complaints that shuffle, radio, or recommendations keep cycling the same small set of songs, including artist radio stations.",
+      "issue_id": "ISS-021",
+      "topic": "catalog"
+    },
+    {
+      "name": "Songs missing or unavailable in catalog",
+      "description": "Complaints that specific songs, artists, or regional music (Indian, Bhojpuri, Zee, Bhajan, soundtracks) are absent, removed, or unavailable.",
+      "issue_id": "ISS-022",
+      "topic": "catalog"
+    },
+    {
+      "name": "Wrong song plays when selected",
+      "description": "Complaints that tapping a song plays a different track, or that search returns no results for a requested song.",
+      "issue_id": "ISS-023",
+      "topic": "catalog"
+    },
+    {
+      "name": "Removed or altered songs in user playlists",
+      "description": "Complaints that songs disappear from playlists or get swapped for clean versions without the user's action.",
+      "issue_id": "ISS-024",
+      "topic": "catalog"
+    },
+    {
+      "name": "Artist top songs and discovery features removed",
+      "description": "Complaints that the artist page no longer shows top songs or that discovery and navigation features have been taken away in an update.",
+      "issue_id": "ISS-025",
+      "topic": "catalog"
+    },
+    {
+      "name": "Premium paywall for basic features",
+      "description": "Complaints that features such as rewinding, repeating songs, or queueing, or listening to chosen songs, require a paid Premium subscription.",
+      "issue_id": "ISS-026",
+      "topic": "catalog"
+    },
+    {
+      "name": "Other catalog problems",
+      "description": "catalog complaints that fit no named issue",
+      "catch_all": true,
+      "issue_id": "ISS-027",
+      "topic": "catalog"
+    },
+    {
+      "name": "Downloaded songs won't play offline",
+      "description": "Downloaded music, podcasts, or playlists fail to start or play when there is no internet or cell signal, or the app keeps trying to connect.",
+      "issue_id": "ISS-028",
+      "topic": "downloads"
+    },
+    {
+      "name": "Downloads disappear or get deleted",
+      "description": "Previously downloaded songs, playlists, or podcasts vanish or are removed, often after updates, phone resets, or time passing, and must be downloaded again.",
+      "issue_id": "ISS-029",
+      "topic": "downloads"
+    },
+    {
+      "name": "Cannot download songs without Premium",
+      "description": "Free or non-subscribed users are unable to download any songs for offline listening.",
+      "issue_id": "ISS-030",
+      "topic": "downloads"
+    },
+    {
+      "name": "Downloads re-download endlessly",
+      "description": "Adding a song or reopening the app causes the whole playlist or downloaded content to re-download repeatedly, or downloads get stuck in the background.",
+      "issue_id": "ISS-031",
+      "topic": "downloads"
+    },
+    {
+      "name": "Offline library loads very slowly",
+      "description": "Opening downloaded songs or playlists with no internet takes a very long time to load instead of opening immediately.",
+      "issue_id": "ISS-032",
+      "topic": "downloads"
+    },
+    {
+      "name": "Playlists or library content missing or empty",
+      "description": "Playlists, albums, liked songs, or saved albums show zero songs, do not appear, or disappear from the library after saving.",
+      "issue_id": "ISS-033",
+      "topic": "downloads"
+    },
+    {
+      "name": "Local files missing or not playing",
+      "description": "Local audio files do not appear, cannot be added, are marked unplayable, or are not shown in liked songs.",
+      "issue_id": "ISS-034",
+      "topic": "downloads"
+    },
+    {
+      "name": "Cannot save downloads to SD card",
+      "description": "Downloads cannot be stored on an SD card or storage location, the option to change storage location was removed, or moving storage fails and deletes content.",
+      "issue_id": "ISS-035",
+      "topic": "downloads"
+    },
+    {
+      "name": "Other downloads problems",
+      "description": "downloads complaints that fit no named issue",
+      "catch_all": true,
+      "issue_id": "ISS-036",
+      "topic": "downloads"
+    },
+    {
+      "name": "Basic features removed in latest update",
+      "description": "Complaints that a recent update removed core functionality that users relied on, making the app less useful.",
+      "issue_id": "ISS-037",
+      "topic": "other"
+    },
+    {
+      "name": "App not working or not opening after update",
+      "description": "Reports that the app fails to work, will not open, or is unusable, including inability to open features like Spotify Wrap.",
+      "issue_id": "ISS-038",
+      "topic": "other"
+    },
+    {
+      "name": "Buggy app with glitches after update",
+      "description": "Complaints describing the app as buggy, glitchy, or full of software problems.",
+      "issue_id": "ISS-039",
+      "topic": "other"
+    },
+    {
+      "name": "Podcast host controversy driving boycott",
+      "description": "Complaints objecting to Spotify content or a host (e.g., Joe Rogan) and misinformation, leading users to refuse to use the app.",
+      "issue_id": "ISS-040",
+      "topic": "other"
+    },
+    {
+      "name": "Offensive content tied to country or religion",
+      "description": "Hateful or offensive remarks targeting a country, Sweden, or Muslims, and related boycott statements.",
+      "issue_id": "ISS-041",
+      "topic": "other"
+    },
+    {
+      "name": "Users switching to competing music apps",
+      "description": "Complaints stating users are leaving Spotify for alternatives such as Gaana or JioSaavn.",
+      "issue_id": "ISS-042",
+      "topic": "other"
+    },
+    {
+      "name": "App quality declined from previously good version",
+      "description": "Complaints that the app used to be good or the best but has become the worst after changes, with requests to restore the old version.",
+      "issue_id": "ISS-043",
+      "topic": "other"
+    },
+    {
+      "name": "General hate and uninstall requests",
+      "description": "Non-specific expressions of hatred, calls to delete or uninstall the app, or one-word negative reviews with no concrete problem named.",
+      "issue_id": "ISS-044",
+      "topic": "other"
+    },
+    {
+      "name": "Other other problems",
+      "description": "other complaints that fit no named issue",
+      "catch_all": true,
+      "issue_id": "ISS-045",
+      "topic": "other"
+    },
+    {
+      "name": "Playback stops or pauses mid-song",
+      "description": "Songs or podcasts stop, pause, or cut out in the middle of playback without user action, sometimes resuming from the start or switching tracks.",
+      "issue_id": "ISS-046",
+      "topic": "playback"
+    },
+    {
+      "name": "Wrong song plays when a different one is selected",
+      "description": "Tapping or searching for a specific song, album, or playlist track starts a different track instead, or auto-queues unrelated songs.",
+      "issue_id": "ISS-047",
+      "topic": "playback"
+    },
+    {
+      "name": "Songs skip or next track fails to play",
+      "description": "Tracks are skipped at random, the next song in a playlist or queue does not start, or playback jumps ahead without the user choosing it.",
+      "issue_id": "ISS-048",
+      "topic": "playback"
+    },
+    {
+      "name": "Cannot play liked or saved songs",
+      "description": "Liked Songs or saved music will not play, or tapping them opens an album view or does nothing instead of starting playback.",
+      "issue_id": "ISS-049",
+      "topic": "playback"
+    },
+    {
+      "name": "Shuffle and repeat function broken",
+      "description": "Shuffle only cycles a small set of songs or repeats the same tracks, and repeat or loop options do not work as expected.",
+      "issue_id": "ISS-050",
+      "topic": "playback"
+    },
+    {
+      "name": "Podcast buffering, skipping, or video missing",
+      "description": "Podcasts buffer constantly, skip mid-episode, fail to load, or podcast video cannot be viewed.",
+      "issue_id": "ISS-051",
+      "topic": "playback"
+    },
+    {
+      "name": "App crashes or freezes during playback",
+      "description": "The app closes unexpectedly, freezes, or stops responding while music is playing or while used alongside other apps.",
+      "issue_id": "ISS-052",
+      "topic": "playback"
+    },
+    {
+      "name": "App stuck on loading or offline error",
+      "description": "The app hangs on the splash or loading screen, takes minutes to load, or wrongly reports no internet or offline status despite a working connection.",
+      "issue_id": "ISS-053",
+      "topic": "playback"
+    },
+    {
+      "name": "Other playback problems",
+      "description": "playback complaints that fit no named issue",
+      "catch_all": true,
+      "issue_id": "ISS-054",
+      "topic": "playback"
+    },
+    {
+      "name": "Support agents ignore or delay replies",
+      "description": "Customers say their messages to support go unanswered or are read and ignored for long periods.",
+      "issue_id": "ISS-055",
+      "topic": "support"
+    },
+    {
+      "name": "Support takes hours to resolve simple issues",
+      "description": "Customers report that even easy problems require hours of back-and-forth with support before being fixed.",
+      "issue_id": "ISS-056",
+      "topic": "support"
+    },
+    {
+      "name": "Subscription cancelled without customer consent",
+      "description": "Customers say a support rep cancelled their subscription without telling them or getting their agreement.",
+      "issue_id": "ISS-057",
+      "topic": "support"
+    },
+    {
+      "name": "Free trial converts to paid charge unexpectedly",
+      "description": "Customers say they were offered a free trial or promo but were charged the following month anyway.",
+      "issue_id": "ISS-058",
+      "topic": "support"
+    },
+    {
+      "name": "Rude or accusatory support staff",
+      "description": "Customers feel support agents were disrespectful, called them liars, or demanded proof without basis.",
+      "issue_id": "ISS-059",
+      "topic": "support"
+    },
+    {
+      "name": "Support email form broken or missing",
+      "description": "Customers cannot find a way to send a support email, or the email contact form glitches out when they try.",
+      "issue_id": "ISS-060",
+      "topic": "support"
+    },
+    {
+      "name": "Audiobook purchase flow broken after update",
+      "description": "Premium users say the recent update made buying audiobooks require hoops or stopped working.",
+      "issue_id": "ISS-061",
+      "topic": "support"
+    },
+    {
+      "name": "Cannot find or recover accidentally hidden songs",
+      "description": "Users who hid a song by accident cannot locate it in recently played or hidden songs settings to restore it.",
+      "issue_id": "ISS-062",
+      "topic": "support"
+    },
+    {
+      "name": "Other support problems",
+      "description": "support complaints that fit no named issue",
+      "catch_all": true,
+      "issue_id": "ISS-063",
+      "topic": "support"
+    },
+    {
+      "name": "Excessive ads on free plan",
+      "description": "Complaints that ads are too frequent, appear every few songs, or are irritating and intrusive for free users.",
+      "issue_id": "ISS-064",
+      "topic": "usability"
+    },
+    {
+      "name": "Cannot shuffle or shuffle stuck on",
+      "description": "Shuffle cannot be turned off or changed, or shuffle does not work when pressed, so songs play in an unwanted order.",
+      "issue_id": "ISS-065",
+      "topic": "usability"
+    },
+    {
+      "name": "Cannot skip, repeat, or seek within songs",
+      "description": "After the update users cannot skip tracks freely, repeat a song, go back, or jump to a specific part of a song.",
+      "issue_id": "ISS-066",
+      "topic": "usability"
+    },
+    {
+      "name": "Playlist plays unrelated or random songs",
+      "description": "Playlists play songs the user did not add, or random songs are inserted or played instead of the chosen track or playlist.",
+      "issue_id": "ISS-067",
+      "topic": "usability"
+    },
+    {
+      "name": "Playlist editing fails or songs cannot be removed",
+      "description": "Editing a playlist jumps to the top, changes won't save, songs can't be removed, or playlists disappear from the library.",
+      "issue_id": "ISS-068",
+      "topic": "usability"
+    },
+    {
+      "name": "New UI is confusing and hard to navigate",
+      "description": "Complaints that the redesigned interface, homepage, auto-play tiles, or navigation is cluttered, confusing, or unusable.",
+      "issue_id": "ISS-069",
+      "topic": "usability"
+    },
+    {
+      "name": "Playback bar disappears and app freezes",
+      "description": "The now-playing bar vanishes, the app stops or crashes when opening links, or the playback controls and slider stop responding.",
+      "issue_id": "ISS-070",
+      "topic": "usability"
+    },
+    {
+      "name": "Lyrics missing or not loading",
+      "description": "Lyrics fail to load or are unavailable for most songs, or lack translation.",
+      "issue_id": "ISS-071",
+      "topic": "usability"
+    },
+    {
+      "name": "Other usability problems",
+      "description": "usability complaints that fit no named issue",
+      "catch_all": true,
+      "issue_id": "ISS-072",
+      "topic": "usability"
+    }
+  ]
+}

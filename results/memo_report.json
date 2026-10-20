@@ -1,0 +1,8 @@
+{
+  "memo_model": "claude-sonnet-5-5",
+  "prompt_sha256": "f08ff12944d049a5a5bbbce43e9a87002cb9826811bfd26848cfc4c5f6770a03",
+  "claims_exported": 23,
+  "unknown_claim_ids": [],
+  "numbers_not_in_allowed_list": [],
+  "total_spent_usd_in_run_dir": 5.114501
+}

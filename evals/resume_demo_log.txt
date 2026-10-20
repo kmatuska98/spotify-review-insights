@@ -1,0 +1,10 @@
+STEP 1: start run on cost_100.csv, batches of 10, interrupt after 3 batches
+INTERRUPTED. Saved on disk: 30 completed IDs, 3 model calls, spend $0.002180
+
+STEP 2: resume (same command, --phase resume). Completed IDs must not be sent again.
+RESUMED. Completed IDs now: 100 (was 30); new calls: 9; spend $0.008285
+Completed-before IDs re-sent after resume: 0   (must be 0)
+Checkpoint check: before is a strict subset of after: True
+
+STEP 3: run again with nothing left to do (warm): new calls expected 0
+New calls this time: 0

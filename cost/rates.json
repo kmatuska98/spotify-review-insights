@@ -1,0 +1,16 @@
+{
+  "checked_on": "2026-10-18",
+  "source": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "unit": "USD per million tokens (MTok)",
+  "note": "Editable. Copied from Anthropic's official pricing page on the date above. Re-check before relying on them.",
+  "models": {
+    "claude-haiku-5-5": {
+      "input": 0.10, "output": 0.50, "batch_input": 0.05, "batch_output": 0.25,
+      "cache_read": 0.01, "applies_to": "prompts up to 100,000 tokens"
+    },
+    "claude-sonnet-5-5": {
+      "input": 2.00, "output": 10.00, "batch_input": 1.00, "batch_output": 5.00,
+      "cache_read": 0.10, "applies_to": "all prompt sizes"
+    }
+  }
+}

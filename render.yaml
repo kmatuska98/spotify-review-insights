@@ -1,0 +1,14 @@
+# Render Blueprint: one free web service = backend API + static dashboard + SQLite database (unpacked from dashboard/data/spotify.sqlite.gz at start).
+services:
+  - type: web
+    name: spotify-review-insights
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn dashboard.app:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /api/health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.13.7
+      - key: DASHBOARD_DB
+        value: dashboard/data/spotify.sqlite.gz

@@ -1,0 +1,14 @@
+{
+  "pilot_ids": 100,
+  "completed": 100,
+  "failed_or_quarantined": 0,
+  "complaint_or_cancellation_records": 51,
+  "complaint_share": 0.51,
+  "verify_sample": 20,
+  "cold_run": "cold-7baf9900",
+  "cold_wall_seconds": 82.27,
+  "warm_run": "warm-406f7534",
+  "warm_wall_seconds": 0.05,
+  "warm_new_calls": 0,
+  "warm_cost_usd": 0
+}
