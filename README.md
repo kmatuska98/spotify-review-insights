@@ -3,7 +3,7 @@
 Where should the next quarter of Spotify product effort go? This repo is a multi-role AI pipeline over the 660,622-review course extract, plus a deployed dashboard.
 **Read "Scope and honest limits" first:** the final run classified **104,975 of 660,609** nonempty reviews (**15.9%**, a seeded random sample). The other reviews are accounted for and quarantined as `not_attempted_budget_limit`; they were never labeled and are not counted in any result.
 
-- **Live dashboard:** `TODO: paste the Render URL here after deploying (see "Deploy the dashboard")`
+- **Live dashboard:** https://spotify-review-insights-dpkl.onrender.com (free Render instance: if it has been idle, the first load can take about a minute to wake up)
 - **Access instructions:** public, no login. Click an issue row to see its source reviews; click a `C0x-...` chip in the recommendation to open the cited issue; paste a review ID into "Trace a review".
 - Setup, commands and file map are below. Offline replay and ranking need **no API key**.
 
@@ -153,7 +153,7 @@ This is a small diagnostic sample, not a population accuracy estimate. 15 of the
 ## Deploy the dashboard
 
 The dashboard is a FastAPI backend (`dashboard/app.py`) that reads a SQLite database (`dashboard/data/spotify.sqlite.gz`, built by `dashboard/build_db.py` from the saved outputs, 104,975 classified reviews, issues, ranking, claims, memo) and serves JSON plus a static page. No API key and no model calls are needed to view it.
-1. Push this repo to GitHub (public). 2. On [render.com](https://render.com) choose **New -> Blueprint**, select the repo; it reads `render.yaml` (free web service, `pip install -r requirements.txt`, `uvicorn dashboard.app:app`). 3. Open the URL and put it at the top of this README. Free instances sleep; the first load can take about a minute.
+1. Push this repo to GitHub (public). 2. On [render.com](https://render.com) choose **New -> Blueprint**, select the repo; it reads `render.yaml` (free web service, `pip install -r requirements.txt`, `uvicorn dashboard.app:app`). 3. Open the URL. This repo's deployment is the live link at the top of this README. Free instances sleep; the first load can take about a minute.
 Local: `uvicorn dashboard.app:app --port 8000`. Rebuild the database: `python dashboard/build_db.py --run-dir work/c10000 --input data/sample_105k.csv`.
 
 ## File map
