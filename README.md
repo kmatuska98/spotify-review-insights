@@ -4,6 +4,7 @@ Where should the next quarter of Spotify product effort go? This repo is a multi
 **Read "Scope and honest limits" first:** the final run classified **104,975 of 660,609** nonempty reviews (**15.9%**, a seeded random sample). The other reviews are accounted for and quarantined as `not_attempted_budget_limit`; they were never labeled and are not counted in any result.
 
 - **Live dashboard:** https://spotify-review-insights-dpkl.onrender.com (free Render instance: if it has been idle, the first load can take about a minute to wake up)
+- **Interruption and resume recording:** [watch on Google Drive](https://drive.google.com/file/d/1cSBCYSaK9IfukCIQobV0XHY8twj-B2KS/view?usp=sharing) (a real Ctrl+C on a 100-review run, then resume with no saved review sent again, then the checkpoint snapshots from the full run). Transcript of the same steps: `evals/resume_demo_log.txt`.
 - **Access instructions:** public, no login. Click an issue row to see its source reviews; click a `C0x-...` chip in the recommendation to open the cited issue; paste a review ID into "Trace a review".
 - Setup, commands and file map are below. Offline replay and ranking need **no API key**.
 
