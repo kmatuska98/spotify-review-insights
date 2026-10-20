@@ -20,6 +20,7 @@ Where should the next quarter of Spotify product effort go? This repo is a multi
 | Official checker (`tools/check_submission.py`) | status `review_required`; **only** issue is `unfinished_classification` (560,639); coverage candidate 0.4908 | `python tools/check_submission.py check ...` (below) |
 | Model calls (final run dir) | 2,854 logged, 5 failed, **$5.11** logged API cost | `grading/calls.jsonl`, `results/run_summary.json` |
 | Golden-50 agreement, first run (before any rule revision) | topic 78%, intent 90%, severity exact 88% (within 1: 100%) | `evals/golden_report_v1_untuned.md` |
+| Held-out 20 (fresh, after rules were set) | topic 90%, intent 85%, severity exact 80% (within 1: 100%) | `evals/heldout_report.md` |
 | Blind verifier (Sonnet 5.5), 200 reviews | topic 86%, intent 89%, severity exact 87.5%, all three 71.5% | `results/verify_report.json` |
 | 100-review pilot (cold / warm) | 82.3 s and $0.0654 / 0.05 s, 0 calls, $0 | `cost/report.md`, `cost/pilot_runs.jsonl` |
 | Tests | 8 offline tests pass; 6/6 real-model injection cases pass | `tests/`, `evals/run_injection_test.py` |
@@ -29,7 +30,7 @@ Measured results are in the tables above; anything labeled *estimate* (calculato
 ## Scope and honest limits
 
 - **Partial classification.** Budget was about $10 of API credit. A full 660,609-review run was estimated at roughly $25+ for enrichment alone, so I classified a **seeded random 100,000-review sample** (`tools/make_sample.py`; includes the 10,000 development reviews and the golden 50). This meets the "at least 100,000" allowance, but the coverage point is proportional, and conclusions describe only the sample. Reviews are self-selected; cancellation language is intent, not observed churn; there is no revenue or plan data, and no revenue-at-risk claim is made.
-- **Golden set was used to revise rules.** I ran the golden 50 first (`labels-v1`, clean result above), then read the disagreements and revised the label rules (`labels-v2`, `pipeline/labels.py`) using general wording and *new synthetic examples only*; no golden text or label is in any prompt. The `labels-v2` golden numbers (`evals/golden_report_v2_tuned.md`: topic 80%, intent 92%, severity 88%) are therefore **not held-out**. A fresh 30-review held-out set was prepared (`evals/heldout_to_label.csv`); see "Held-out check" below for its status.
+- **Golden set was used to revise rules.** I ran the golden 50 first (`labels-v1`, clean result above), then read the disagreements and revised the label rules (`labels-v2`, `pipeline/labels.py`) using general wording and *new synthetic examples only*; no golden text or label is in any prompt. The `labels-v2` golden numbers (`evals/golden_report_v2_tuned.md`: topic 80%, intent 92%, severity 88%) are therefore **not held-out**. A fresh held-out set was labeled afterwards (20 reviews); see "Held-out check" below for its results.
 - **Two golden labels differ from the grading contract on purpose.** I labeled two "premium-only controls" reviews as `usability`; the contract says premium-only controls are `billing`. The pipeline follows the contract. The golden file is untouched, so those two count as disagreements.
 - **Retries.** The spec allows one retry of invalid output. The run began with up to 3 attempts per batch; 56 enrich calls were a third attempt. I then reduced `MAX_ATTEMPTS` to 2.
 - **Verification is a sample**, and agreement between two models is not accuracy. The verifier disagreed with the labeler on 28.5% of the 200 reviews on at least one field (topic 28, severity 25, intent 22 field-level disagreements). The largest single patterns are `usability` vs `billing` topic (9 cases, the premium-gating boundary) and severity 2 vs 3 (11 cases); severity was never off by more than 1.
@@ -126,7 +127,18 @@ The pilot ran the full chain on `cost_100.csv` with an empty cache (cold, 4 enri
 
 ## Held-out check
 
-Because the golden results informed the rules, the assignment asks for fresh held-out cases. `evals/heldout_to_label.csv` has 30 reviews from the 10,000 development set that are not in the golden 50 or the 500 checkpoint; `evals/label_heldout.html` is the labeling page. `TODO: held-out labels not yet entered; once labeled, run python evals/score_golden.py <records> --held-out evals/heldout_labeled.csv`. Until then the only untuned evidence is the first golden run.
+Because the golden results informed the rules, I added fresh held-out cases. `evals/heldout_to_label.csv` has 30 reviews from the 10,000 development set that are not in the golden 50 or the 500 checkpoint (seeded sample). I hand-labeled the **first 20** (`evals/heldout_labeled.csv`; the other 10 were left unlabeled for time and are not scored). The model's answers are the final-run records for the same IDs (`evals/heldout_predictions.jsonl`). Full report: `evals/heldout_report.md`.
+
+| Held-out 20 | Result |
+|---|---|
+| Topic agreement | 90% (18/20) |
+| Intent agreement | 85% (17/20) |
+| Severity exact / within 1 / MAE | 80% / 100% / 0.20 (model never higher than the human; lower in 4 cases) |
+| Sentiment within 0.5 | 18/20 (MAE 0.29) |
+| Evidence quote exact substring | 20/20 |
+| needs_review | human flagged 2, model flagged 3 (caught 1) |
+
+This is a small diagnostic sample, not a population accuracy estimate. 15 of the 20 reviews are topic `other` (mostly short praise or vague comments), so per-class F1 is not meaningful. Disagreements (7 reviews): 3 are praise/complaint edge cases on short text ("Boycott", a single emoji, a three-star review praising downloads); 1 is a premium-gating request scored severity 2 by the model and 3 by the human; 1 is a "glitchy app" complaint scored severity 3 vs 4; 1 is a praise review that mentions ads (`other` vs `usability`); and 1 (`4e677b01`, a mobile-payment error) was labeled `playback` by the human but `billing` by the model. Under the contract a failing payment is `billing`, so this one is more likely a human-label slip than a model error; the human label is left as entered.
 
 ## Deploy the dashboard
 

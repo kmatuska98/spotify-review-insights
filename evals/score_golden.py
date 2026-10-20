@@ -36,7 +36,8 @@ def table(pairs, classes):
 
 
 def score(rec_path, gold_path, texts_path, title):
-    gold = {r["review_id"]: r for r in csv.DictReader(open(gold_path, encoding="utf-8-sig", newline=""))}
+    # only rows the human actually labeled (a partially labeled file is fine)
+    gold = {r["review_id"]: r for r in csv.DictReader(open(gold_path, encoding="utf-8-sig", newline="")) if (r.get("topic") or "").strip()}
     texts = {r["review_id"]: r["review_text"] for r in csv.DictReader(open(texts_path, encoding="utf-8-sig", newline=""))}
     pred = {}
     for line in open(rec_path, encoding="utf-8"):
