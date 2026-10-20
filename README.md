@@ -103,7 +103,7 @@ Review `001805dd-4e6b-4278-9988-d21c52576a94` (2 stars): *"Way too many ads. Pla
 
 **Working result (3)**
 - Full ingestion, coverage, classification: `grading/`, `results/run_summary.json` (coverage is partial: see limits).
-- Runnable staged program, bounded calls, saved handoffs, resume: `python -m pipeline.run_all`, 50-review max requests (`calls.jsonl`), interruption evidence: the 100k run's process ended unexpectedly partway (exit code 1, cause not diagnosed) and was restarted with `--phase resume` (`grading/checkpoint_before.json` 47,154 IDs -> `checkpoint_after.json` 104,975 IDs, no completed ID re-sent), plus `tools/resume_demo.py` / `evals/resume_demo_log.txt`. **Recording:** `TODO: link the screen recording`.
+- Runnable staged program, bounded calls, saved handoffs, resume: `python -m pipeline.run_all`, 50-review max requests (`calls.jsonl`), interruption evidence: the 100k run's process ended unexpectedly partway (exit code 1, cause not diagnosed) and was restarted with `--phase resume` (`grading/checkpoint_before.json` 47,154 IDs -> `checkpoint_after.json` 104,975 IDs, no completed ID re-sent), plus `tools/resume_demo.py` / `evals/resume_demo_log.txt`. **Recording:** [interruption and resume screen recording](https://drive.google.com/file/d/1cSBCYSaK9IfukCIQobV0XHY8twj-B2KS/view?usp=sharing) (live Ctrl+C on a 100-review run with `tools/show_progress.py`, then the checkpoint snapshots with `tools/show_checkpoints.py`).
 - Reproducible ranking + deployed dashboard: `python -m pipeline.rerank` (below); dashboard in `dashboard/`.
 
 ## Commands
