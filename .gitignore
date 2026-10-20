@@ -8,5 +8,5 @@ Downloads/
 .claude/settings.local.json
 # large working files (regenerable; the evidence is exported to grading/, results/, cost/, evals/)
 work/
-data/sample_100k.csv
+data/sample_*k.csv
 .claude/launch.json

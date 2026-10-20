@@ -40,7 +40,7 @@ Multi-agent pipeline over Spotify reviews (`data/spotify_reviews_18months.csv`, 
 - Remote Control was turned on for the session at the user's request.
 
 ## STATUS as of 2026-10-20 (supersedes the older "Not done yet" list below)
-DONE: 100k-sample run (99,970 classified, 30 failed, 560,609 not attempted), group/rank/memo/verify, grading/ export (checker: only issue is unfinished_classification, coverage candidate 0.4908), cost/ pilot + offline calculator, tests (8 pass) + injection 6/6, resume demo, dashboard (FastAPI + SQLite, tested locally), README, results/ folder, .gitignore ignores work/.
+DONE: 100k-sample run (104,975 classified (after a 5,000-review extension to clear the 100,000 floor), 25 failed, 555,609 not attempted), group/rank/memo/verify, grading/ export (checker: only issue is unfinished_classification, coverage candidate 0.4953), cost/ pilot + offline calculator, tests (8 pass) + injection 6/6, resume demo, dashboard (FastAPI + SQLite, tested locally), README, results/ folder, .gitignore ignores work/.
 USER TODO: (1) approve/ask Claude to `git init`, commit, create PUBLIC GitHub repo and push (gh is logged in as kmatuska98; not done yet); (2) deploy dashboard on Render via render.yaml, paste URL in README top; (3) hand-label the 30 held-out reviews (evals/label_heldout.html -> save evals/heldout_labeled.csv), then run score_golden.py --held-out; (4) record the interruption/resume screen recording (python tools/resume_demo.py) and link it in README; (5) delete .env.docx and stray Downloads link; (6) check API credit balance in Anthropic Console.
 Total logged API spend across all run dirs about $5.47 (estimate; Console is authoritative).
 

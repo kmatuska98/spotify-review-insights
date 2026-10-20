@@ -1,335 +1,335 @@
 {
-  "eligible_records": 43550,
-  "members": 43550,
+  "eligible_records": 45797,
+  "members": 45797,
   "unassigned": 0,
   "methods": {
-    "cache_alias": 4502,
-    "model": 39048
+    "cache_alias": 4761,
+    "model": 41036
   },
   "issues": [
     {
       "issue_id": "ISS-001",
       "topic": "access",
       "name": "Phone number login rejected or check-number error",
-      "members": 346
+      "members": 371
     },
     {
       "issue_id": "ISS-002",
       "topic": "access",
       "name": "Persistent 'Something went wrong' error on login",
-      "members": 188
+      "members": 199
     },
     {
       "issue_id": "ISS-003",
       "topic": "access",
       "name": "False 'no internet connection' error while online",
-      "members": 236
+      "members": 246
     },
     {
       "issue_id": "ISS-004",
       "topic": "access",
       "name": "Logged out unexpectedly and cannot log back in",
-      "members": 260
+      "members": 273
     },
     {
       "issue_id": "ISS-005",
       "topic": "access",
       "name": "Password recovery and login-without-password not working",
-      "members": 71
+      "members": 77
     },
     {
       "issue_id": "ISS-006",
       "topic": "access",
       "name": "Facebook or Google sign-in problems and linked account loss",
-      "members": 65
+      "members": 68
     },
     {
       "issue_id": "ISS-007",
       "topic": "access",
       "name": "App won't open or shows blank library after update",
-      "members": 165
+      "members": 171
     },
     {
       "issue_id": "ISS-008",
       "topic": "access",
       "name": "Regional and age restriction access blocks",
-      "members": 77
+      "members": 78
     },
     {
       "issue_id": "ISS-009",
       "topic": "access",
       "name": "Other access problems",
-      "members": 553
+      "members": 589
     },
     {
       "issue_id": "ISS-010",
       "topic": "billing",
       "name": "Skips limited to six per hour",
-      "members": 604
+      "members": 631
     },
     {
       "issue_id": "ISS-011",
       "topic": "billing",
       "name": "Cannot choose specific songs without premium",
-      "members": 1196
+      "members": 1253
     },
     {
       "issue_id": "ISS-012",
       "topic": "billing",
       "name": "Lyrics locked behind premium paywall",
-      "members": 303
+      "members": 319
     },
     {
       "issue_id": "ISS-013",
       "topic": "billing",
       "name": "Seeking and rewinding restricted to premium",
-      "members": 726
+      "members": 759
     },
     {
       "issue_id": "ISS-014",
       "topic": "billing",
       "name": "Playlist and repeat features gated to premium",
-      "members": 1600
+      "members": 1711
     },
     {
       "issue_id": "ISS-015",
       "topic": "billing",
       "name": "Premium purchase fails or won't process",
-      "members": 231
+      "members": 241
     },
     {
       "issue_id": "ISS-016",
       "topic": "billing",
       "name": "Charged after cancelling or missed payment",
-      "members": 214
+      "members": 228
     },
     {
       "issue_id": "ISS-017",
       "topic": "billing",
       "name": "Premium price too high",
-      "members": 426
+      "members": 455
     },
     {
       "issue_id": "ISS-018",
       "topic": "billing",
       "name": "Other billing problems",
-      "members": 2717
+      "members": 2825
     },
     {
       "issue_id": "ISS-019",
       "topic": "catalog",
       "name": "Lyrics not loading or missing",
-      "members": 705
+      "members": 736
     },
     {
       "issue_id": "ISS-020",
       "topic": "catalog",
       "name": "Shuffle and playlists playing unwanted recommended songs",
-      "members": 399
+      "members": 420
     },
     {
       "issue_id": "ISS-021",
       "topic": "catalog",
       "name": "Shuffle repeats the same songs repeatedly",
-      "members": 179
+      "members": 186
     },
     {
       "issue_id": "ISS-022",
       "topic": "catalog",
       "name": "Songs missing or unavailable in catalog",
-      "members": 681
+      "members": 705
     },
     {
       "issue_id": "ISS-023",
       "topic": "catalog",
       "name": "Wrong song plays when selected",
-      "members": 337
+      "members": 358
     },
     {
       "issue_id": "ISS-024",
       "topic": "catalog",
       "name": "Removed or altered songs in user playlists",
-      "members": 105
+      "members": 117
     },
     {
       "issue_id": "ISS-025",
       "topic": "catalog",
       "name": "Artist top songs and discovery features removed",
-      "members": 72
+      "members": 78
     },
     {
       "issue_id": "ISS-026",
       "topic": "catalog",
       "name": "Premium paywall for basic features",
-      "members": 51
+      "members": 58
     },
     {
       "issue_id": "ISS-027",
       "topic": "catalog",
       "name": "Other catalog problems",
-      "members": 428
+      "members": 447
     },
     {
       "issue_id": "ISS-028",
       "topic": "downloads",
       "name": "Downloaded songs won't play offline",
-      "members": 313
+      "members": 330
     },
     {
       "issue_id": "ISS-029",
       "topic": "downloads",
       "name": "Downloads disappear or get deleted",
-      "members": 147
+      "members": 152
     },
     {
       "issue_id": "ISS-030",
       "topic": "downloads",
       "name": "Cannot download songs without Premium",
-      "members": 137
+      "members": 145
     },
     {
       "issue_id": "ISS-031",
       "topic": "downloads",
       "name": "Downloads re-download endlessly",
-      "members": 83
+      "members": 85
     },
     {
       "issue_id": "ISS-032",
       "topic": "downloads",
       "name": "Offline library loads very slowly",
-      "members": 34
+      "members": 36
     },
     {
       "issue_id": "ISS-033",
       "topic": "downloads",
       "name": "Playlists or library content missing or empty",
-      "members": 82
+      "members": 86
     },
     {
       "issue_id": "ISS-034",
       "topic": "downloads",
       "name": "Local files missing or not playing",
-      "members": 32
+      "members": 33
     },
     {
       "issue_id": "ISS-035",
       "topic": "downloads",
       "name": "Cannot save downloads to SD card",
-      "members": 35
+      "members": 37
     },
     {
       "issue_id": "ISS-036",
       "topic": "downloads",
       "name": "Other downloads problems",
-      "members": 225
+      "members": 245
     },
     {
       "issue_id": "ISS-037",
       "topic": "other",
       "name": "Basic features removed in latest update",
-      "members": 820
+      "members": 860
     },
     {
       "issue_id": "ISS-038",
       "topic": "other",
       "name": "App not working or not opening after update",
-      "members": 284
+      "members": 296
     },
     {
       "issue_id": "ISS-039",
       "topic": "other",
       "name": "Buggy app with glitches after update",
-      "members": 391
+      "members": 420
     },
     {
       "issue_id": "ISS-040",
       "topic": "other",
       "name": "Podcast host controversy driving boycott",
-      "members": 82
+      "members": 86
     },
     {
       "issue_id": "ISS-041",
       "topic": "other",
       "name": "Offensive content tied to country or religion",
-      "members": 432
+      "members": 453
     },
     {
       "issue_id": "ISS-042",
       "topic": "other",
       "name": "Users switching to competing music apps",
-      "members": 316
+      "members": 334
     },
     {
       "issue_id": "ISS-043",
       "topic": "other",
       "name": "App quality declined from previously good version",
-      "members": 1619
+      "members": 1719
     },
     {
       "issue_id": "ISS-044",
       "topic": "other",
       "name": "General hate and uninstall requests",
-      "members": 8469
+      "members": 8897
     },
     {
       "issue_id": "ISS-045",
       "topic": "other",
       "name": "Other other problems",
-      "members": 1051
+      "members": 1099
     },
     {
       "issue_id": "ISS-046",
       "topic": "playback",
       "name": "Playback stops or pauses mid-song",
-      "members": 1141
+      "members": 1179
     },
     {
       "issue_id": "ISS-047",
       "topic": "playback",
       "name": "Wrong song plays when a different one is selected",
-      "members": 467
+      "members": 499
     },
     {
       "issue_id": "ISS-048",
       "topic": "playback",
       "name": "Songs skip or next track fails to play",
-      "members": 209
+      "members": 223
     },
     {
       "issue_id": "ISS-049",
       "topic": "playback",
       "name": "Cannot play liked or saved songs",
-      "members": 194
+      "members": 203
     },
     {
       "issue_id": "ISS-050",
       "topic": "playback",
       "name": "Shuffle and repeat function broken",
-      "members": 132
+      "members": 138
     },
     {
       "issue_id": "ISS-051",
       "topic": "playback",
       "name": "Podcast buffering, skipping, or video missing",
-      "members": 173
+      "members": 184
     },
     {
       "issue_id": "ISS-052",
       "topic": "playback",
       "name": "App crashes or freezes during playback",
-      "members": 889
+      "members": 929
     },
     {
       "issue_id": "ISS-053",
       "topic": "playback",
       "name": "App stuck on loading or offline error",
-      "members": 560
+      "members": 588
     },
     {
       "issue_id": "ISS-054",
       "topic": "playback",
       "name": "Other playback problems",
-      "members": 1643
+      "members": 1735
     },
     {
       "issue_id": "ISS-055",
@@ -341,7 +341,7 @@
       "issue_id": "ISS-056",
       "topic": "support",
       "name": "Support takes hours to resolve simple issues",
-      "members": 15
+      "members": 16
     },
     {
       "issue_id": "ISS-057",
@@ -383,61 +383,61 @@
       "issue_id": "ISS-063",
       "topic": "support",
       "name": "Other support problems",
-      "members": 54
+      "members": 55
     },
     {
       "issue_id": "ISS-064",
       "topic": "usability",
       "name": "Excessive ads on free plan",
-      "members": 5292
+      "members": 5575
     },
     {
       "issue_id": "ISS-065",
       "topic": "usability",
       "name": "Cannot shuffle or shuffle stuck on",
-      "members": 748
+      "members": 779
     },
     {
       "issue_id": "ISS-066",
       "topic": "usability",
       "name": "Cannot skip, repeat, or seek within songs",
-      "members": 1319
+      "members": 1392
     },
     {
       "issue_id": "ISS-067",
       "topic": "usability",
       "name": "Playlist plays unrelated or random songs",
-      "members": 876
+      "members": 921
     },
     {
       "issue_id": "ISS-068",
       "topic": "usability",
       "name": "Playlist editing fails or songs cannot be removed",
-      "members": 267
+      "members": 287
     },
     {
       "issue_id": "ISS-069",
       "topic": "usability",
       "name": "New UI is confusing and hard to navigate",
-      "members": 1124
+      "members": 1173
     },
     {
       "issue_id": "ISS-070",
       "topic": "usability",
       "name": "Playback bar disappears and app freezes",
-      "members": 206
+      "members": 220
     },
     {
       "issue_id": "ISS-071",
       "topic": "usability",
       "name": "Lyrics missing or not loading",
-      "members": 56
+      "members": 60
     },
     {
       "issue_id": "ISS-072",
       "topic": "usability",
       "name": "Other usability problems",
-      "members": 656
+      "members": 687
     }
   ]
 }

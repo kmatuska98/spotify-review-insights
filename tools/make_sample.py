@@ -1,4 +1,4 @@
-"""Build data/sample_100k.csv: the 10,000 development reviews + the golden 50 + a seeded random fill
+"""Build data/sample_<N>k.csv: the 10,000 development reviews + the golden 50 + a seeded random fill
 of other NONEMPTY reviews from the full CSV, up to N rows. Deterministic (SHA-256 order, fixed seed).
 
 usage: python tools/make_sample.py [N]
@@ -26,7 +26,7 @@ pool.sort(key=lambda x: x[0])
 rows = list(must.values()) + [p[1] for p in pool[: N - len(must)]]
 rows.sort(key=lambda r: hashlib.sha256((SEED + r["review_id"]).encode()).hexdigest())
 
-out = ROOT / "data" / "sample_100k.csv"
+out = ROOT / "data" / f"sample_{N // 1000}k.csv"
 with out.open("w", encoding="utf-8", newline="") as f:
     w = csv.DictWriter(f, fieldnames=FIELDS, lineterminator="\n")
     w.writeheader()

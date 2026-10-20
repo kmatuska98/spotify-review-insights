@@ -1,7 +1,7 @@
 # Spotify review insight pipeline
 
 Where should the next quarter of Spotify product effort go? This repo is a multi-role AI pipeline over the 660,622-review course extract, plus a deployed dashboard.
-**Read "Scope and honest limits" first:** the final run classified **99,970 of 660,609** nonempty reviews (**15.1%**, a seeded random sample). The other reviews are accounted for and quarantined as `not_attempted_budget_limit`; they were never labeled and are not counted in any result.
+**Read "Scope and honest limits" first:** the final run classified **104,975 of 660,609** nonempty reviews (**15.9%**, a seeded random sample). The other reviews are accounted for and quarantined as `not_attempted_budget_limit`; they were never labeled and are not counted in any result.
 
 - **Live dashboard:** `TODO: paste the Render URL here after deploying (see "Deploy the dashboard")`
 - **Access instructions:** public, no login. Click an issue row to see its source reviews; click a `C0x-...` chip in the recommendation to open the cited issue; paste a review ID into "Trace a review".
@@ -13,15 +13,15 @@ Where should the next quarter of Spotify product effort go? This repo is a multi
 |---|---|---|
 | Source rows accounted for (one record each) | 660,622 | `grading/records.jsonl.gz`, `grading/ingestion.json` |
 | Empty texts quarantined (`empty_review_text`) | 13 | `results/quarantine.jsonl.gz` |
-| Classified (completed) | 99,970 (15.13% of 660,609 nonempty) | `results/run_summary.json` |
-| Of those, exact-duplicate text reuse (`cache_source_id`) | 21,913 (no model call; every ID kept as its own record) | `grading/records.jsonl.gz` |
-| Failed validation (kept with reason) | 30 (29 `evidence_not_exact_substring`, 1 `invalid_field_value`) | quarantine log |
-| Not attempted (budget) | 560,609 | quarantine log |
-| Official checker (`tools/check_submission.py`) | status `review_required`; **only** issue is `unfinished_classification` (560,639); coverage candidate 0.4908 | `python tools/check_submission.py check ...` (below) |
-| Model calls (final run dir) | 2,854 logged, 5 failed, **$5.11** logged API cost | `grading/calls.jsonl`, `results/run_summary.json` |
+| Classified (completed) | 104,975 (15.89% of 660,609 nonempty) | `results/run_summary.json` |
+| Of those, exact-duplicate text reuse (`cache_source_id`) | 23,134 (no model call; every ID kept as its own record) | `grading/records.jsonl.gz` |
+| Failed validation (kept with reason) | 25 (24 `evidence_not_exact_substring`, 1 `malformed_item`) | quarantine log |
+| Not attempted (budget) | 555,609 | quarantine log |
+| Official checker (`tools/check_submission.py`) | status `review_required`; **only** issue is `unfinished_classification` (555,634); coverage candidate 0.4953 | `python tools/check_submission.py check ...` (below) |
+| Model calls (final run dir) | 2,997 logged, 5 failed, **$5.40** logged API cost | `grading/calls.jsonl`, `results/run_summary.json` |
 | Golden-50 agreement, first run (before any rule revision) | topic 78%, intent 90%, severity exact 88% (within 1: 100%) | `evals/golden_report_v1_untuned.md` |
 | Held-out 20 (fresh, after rules were set) | topic 90%, intent 85%, severity exact 80% (within 1: 100%) | `evals/heldout_report.md` |
-| Blind verifier (Sonnet 5.5), 200 reviews | topic 86%, intent 89%, severity exact 87.5%, all three 71.5% | `results/verify_report.json` |
+| Blind verifier (Sonnet 5.5), 200 reviews | topic 85%, intent 89%, severity exact 85%, all three 69% | `results/verify_report.json` |
 | 100-review pilot (cold / warm) | 82.3 s and $0.0654 / 0.05 s, 0 calls, $0 | `cost/report.md`, `cost/pilot_runs.jsonl` |
 | Tests | 8 offline tests pass; 6/6 real-model injection cases pass | `tests/`, `evals/run_injection_test.py` |
 
@@ -29,11 +29,11 @@ Measured results are in the tables above; anything labeled *estimate* (calculato
 
 ## Scope and honest limits
 
-- **Partial classification.** Budget was about $10 of API credit. A full 660,609-review run was estimated at roughly $25+ for enrichment alone, so I classified a **seeded random 100,000-review sample** (`tools/make_sample.py`; includes the 10,000 development reviews and the golden 50). This meets the "at least 100,000" allowance, but the coverage point is proportional, and conclusions describe only the sample. Reviews are self-selected; cancellation language is intent, not observed churn; there is no revenue or plan data, and no revenue-at-risk claim is made.
+- **Partial classification.** Budget was about $10 of API credit. A full 660,609-review run was estimated at roughly $25+ for enrichment alone, so I classified a **seeded random 105,000-review sample** (`tools/make_sample.py 105000`; it includes the 10,000 development reviews and the golden 50; 104,975 completed and 25 failed validation). The first run completed 99,970, just under the 100,000 floor, so I extended the same sample by 5,000. This meets the "at least 100,000" allowance, but the coverage point is proportional, and conclusions describe only the sample. Reviews are self-selected; cancellation language is intent, not observed churn; there is no revenue or plan data, and no revenue-at-risk claim is made.
 - **Golden set was used to revise rules.** I ran the golden 50 first (`labels-v1`, clean result above), then read the disagreements and revised the label rules (`labels-v2`, `pipeline/labels.py`) using general wording and *new synthetic examples only*; no golden text or label is in any prompt. The `labels-v2` golden numbers (`evals/golden_report_v2_tuned.md`: topic 80%, intent 92%, severity 88%) are therefore **not held-out**. A fresh held-out set was labeled afterwards (20 reviews); see "Held-out check" below for its results.
 - **Two golden labels differ from the grading contract on purpose.** I labeled two "premium-only controls" reviews as `usability`; the contract says premium-only controls are `billing`. The pipeline follows the contract. The golden file is untouched, so those two count as disagreements.
 - **Retries.** The spec allows one retry of invalid output. The run began with up to 3 attempts per batch; 56 enrich calls were a third attempt. I then reduced `MAX_ATTEMPTS` to 2.
-- **Verification is a sample**, and agreement between two models is not accuracy. The verifier disagreed with the labeler on 28.5% of the 200 reviews on at least one field (topic 28, severity 25, intent 22 field-level disagreements). The largest single patterns are `usability` vs `billing` topic (9 cases, the premium-gating boundary) and severity 2 vs 3 (11 cases); severity was never off by more than 1.
+- **Verification is a sample**, and agreement between two models is not accuracy. The verifier disagreed with the labeler on 31% of the 200 reviews (62) on at least one field (field-level: topic 30, severity 30, intent 22). The largest single patterns are `usability` vs `billing` topic (9 cases, the premium-gating boundary) and severity 2 vs 3 (10 cases). Severity was within 1 point in 99.5% of reviews (one case differed by 2).
 - **The top-ranked issue is generic.** "General hate and uninstall requests" ranks #1 by the required formula but is vague (no specific fix); the memo says so and ranks actionable issues first. The ranking is the required baseline; the memo is the judgment layer.
 - Issue menus are per topic, so a theme such as "premium gating" appears under both `billing` and `usability` issues; counts are not merged.
 - Cost figures are computed from logged token usage and dated rates, not provider invoices.
@@ -77,7 +77,7 @@ Review `001805dd-4e6b-4278-9988-d21c52576a94` (2 stars): *"Way too many ads. Pla
 2. **Enrichment (Haiku, labels-v2):** topic `usability`, intent `complaint`, severity 3, evidence quote *"Way too many ads. Plays 1 or 2 songs and then multiple ads"* (exact substring, checked in code).
 3. **Verification:** only a random sample is verified; this review was not in it (see `results/verification.jsonl`).
 4. **Issue membership:** `ISS-064` "Excessive ads on free plan" (`results/membership.csv`).
-5. **Ranking:** rank 2: 5,292 complaints, mean severity 2.230537, priority 11,804 (`results/ranking.csv`).
+5. **Ranking:** rank 2: 5,575 complaints, mean severity 2.229776, priority 12,431 (`results/ranking.csv`).
 6. **Memo claim:** `C02-count` = 5292, `C02-mean`, `C02-score` in `results/claims.csv`; the dashboard re-checks each claim against the ranking table.
 
 **A failed case:** review `4765dcaf-18b2-4426-aa8a-4576ec59217d` ("This app was great but coul'd not download so please replace the error"). The model's quote was not an exact substring (it fixed the typo "coul'd"). The batch was retried once; the quote was still invalid, so the record was **not** saved as a success. It is in `results/quarantine.jsonl.gz` with reason `evidence_not_exact_substring` and counts as unfinished. A review where tone and topic conflict, or where the language is unsupported, is routed by the `needs_review` flag and the "unclear" rules in `pipeline/labels.py`.
@@ -97,7 +97,7 @@ Review `001805dd-4e6b-4278-9988-d21c52576a94` (2 stars): *"Way too many ads. Pla
 
 **Working result (3)**
 - Full ingestion, coverage, classification: `grading/`, `results/run_summary.json` (coverage is partial: see limits).
-- Runnable staged program, bounded calls, saved handoffs, resume: `python -m pipeline.run_all`, 50-review max requests (`calls.jsonl`), interruption evidence: the 100k run's process ended unexpectedly partway (exit code 1, cause not diagnosed) and was restarted with `--phase resume` (`grading/checkpoint_before.json` 43,380 IDs -> `checkpoint_after.json` 99,970 IDs, no completed ID re-sent), plus `tools/resume_demo.py` / `evals/resume_demo_log.txt`. **Recording:** `TODO: link the screen recording`.
+- Runnable staged program, bounded calls, saved handoffs, resume: `python -m pipeline.run_all`, 50-review max requests (`calls.jsonl`), interruption evidence: the 100k run's process ended unexpectedly partway (exit code 1, cause not diagnosed) and was restarted with `--phase resume` (`grading/checkpoint_before.json` 47,154 IDs -> `checkpoint_after.json` 104,975 IDs, no completed ID re-sent), plus `tools/resume_demo.py` / `evals/resume_demo_log.txt`. **Recording:** `TODO: link the screen recording`.
 - Reproducible ranking + deployed dashboard: `python -m pipeline.rerank` (below); dashboard in `dashboard/`.
 
 ## Commands
@@ -142,9 +142,9 @@ This is a small diagnostic sample, not a population accuracy estimate. 15 of the
 
 ## Deploy the dashboard
 
-The dashboard is a FastAPI backend (`dashboard/app.py`) that reads a SQLite database (`dashboard/data/spotify.sqlite.gz`, built by `dashboard/build_db.py` from the saved outputs, 99,970 classified reviews, issues, ranking, claims, memo) and serves JSON plus a static page. No API key and no model calls are needed to view it.
+The dashboard is a FastAPI backend (`dashboard/app.py`) that reads a SQLite database (`dashboard/data/spotify.sqlite.gz`, built by `dashboard/build_db.py` from the saved outputs, 104,975 classified reviews, issues, ranking, claims, memo) and serves JSON plus a static page. No API key and no model calls are needed to view it.
 1. Push this repo to GitHub (public). 2. On [render.com](https://render.com) choose **New -> Blueprint**, select the repo; it reads `render.yaml` (free web service, `pip install -r requirements.txt`, `uvicorn dashboard.app:app`). 3. Open the URL and put it at the top of this README. Free instances sleep; the first load can take about a minute.
-Local: `uvicorn dashboard.app:app --port 8000`. Rebuild the database: `python dashboard/build_db.py --run-dir work/c10000 --input data/sample_100k.csv`.
+Local: `uvicorn dashboard.app:app --port 8000`. Rebuild the database: `python dashboard/build_db.py --run-dir work/c10000 --input data/sample_105k.csv`.
 
 ## File map
 

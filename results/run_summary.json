@@ -1,21 +1,21 @@
 {
   "final_run_dir": "work/c10000 (not committed: contains large SQLite working files)",
   "source_rows": 660622,
-  "quarantined_not_completed": 560652,
+  "quarantined_not_completed": 555647,
   "quarantine_reasons": {
-    "not_attempted_budget_limit": 560609,
-    "evidence_not_exact_substring": 29,
+    "not_attempted_budget_limit": 555609,
+    "evidence_not_exact_substring": 24,
     "empty_review_text": 13,
-    "invalid_field_value": 1
+    "malformed_item": 1
   },
-  "classified": 99970,
-  "classified_fraction_of_labelable": 0.15133,
-  "model_calls_logged": 2854,
+  "classified": 104975,
+  "classified_fraction_of_labelable": 0.158906,
+  "model_calls_logged": 2997,
   "failed_calls": 5,
-  "api_cost_usd_logged": 5.1145,
+  "api_cost_usd_logged": 5.4038,
   "enrich_calls_by_attempt_number": {
-    "1": 1564,
-    "2": 423,
+    "1": 1641,
+    "2": 441,
     "3": 56
   },
   "stages": [
@@ -23,12 +23,12 @@
       "role": "enrich",
       "model": "claude-haiku-5-5",
       "phase": "initial",
-      "calls": 1112,
+      "calls": 1207,
       "failed": 0,
-      "input_tokens": 5468636,
-      "output_tokens": 3366251,
-      "usd": 2.23,
-      "seconds": 10574.36
+      "input_tokens": 5949350,
+      "output_tokens": 3664850,
+      "usd": 2.4274,
+      "seconds": 11564.3
     },
     {
       "role": "enrich",
@@ -45,34 +45,34 @@
       "role": "group",
       "model": "claude-haiku-5-5",
       "phase": "initial",
-      "calls": 797,
+      "calls": 842,
       "failed": 0,
-      "input_tokens": 2996749,
-      "output_tokens": 814464,
-      "usd": 0.7069,
-      "seconds": 3431.71
+      "input_tokens": 3151915,
+      "output_tokens": 856118,
+      "usd": 0.7433,
+      "seconds": 3614.4
     },
     {
       "role": "memo",
       "model": "claude-sonnet-5-5",
       "phase": "initial",
-      "calls": 2,
+      "calls": 4,
       "failed": 0,
-      "input_tokens": 4356,
-      "output_tokens": 3000,
-      "usd": 0.0387,
-      "seconds": 24.51
+      "input_tokens": 8646,
+      "output_tokens": 6000,
+      "usd": 0.0773,
+      "seconds": 52.31
     },
     {
       "role": "verify",
       "model": "claude-sonnet-5-5",
       "phase": "initial",
-      "calls": 12,
+      "calls": 13,
       "failed": 0,
-      "input_tokens": 48395,
-      "output_tokens": 21516,
-      "usd": 0.312,
-      "seconds": 121.84
+      "input_tokens": 51960,
+      "output_tokens": 22499,
+      "usd": 0.3289,
+      "seconds": 127.44
     }
   ],
   "notes": [

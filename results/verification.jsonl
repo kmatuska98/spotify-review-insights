@@ -1,5 +1,6 @@
 {"review_id": "b082bff4-07d1-431e-9abe-f3d1b8748015", "enrich": {"topic": "other", "intent": "praise", "severity": 1}, "verify": {"topic": "other", "intent": "unclear", "severity": 1}, "all_agree": false}
 {"review_id": "f562236a-44f9-4983-8354-62eae2a25841", "enrich": {"topic": "billing", "intent": "complaint", "severity": 2}, "verify": {"topic": "other", "intent": "cancellation", "severity": 2}, "all_agree": false}
+{"review_id": "d251ebd3-9a36-47e4-9839-bea9614563c7", "enrich": {"topic": "usability", "intent": "complaint", "severity": 2}, "verify": {"topic": "usability", "intent": "complaint", "severity": 3}, "all_agree": false}
 {"review_id": "91a05c3a-7dc6-4e43-aa2f-902934fdb41c", "enrich": {"topic": "catalog", "intent": "complaint", "severity": 2}, "verify": {"topic": "catalog", "intent": "complaint", "severity": 2}, "all_agree": true}
 {"review_id": "0cce58d3-d3ab-42dd-b99a-fb3c546d471b", "enrich": {"topic": "other", "intent": "praise", "severity": 1}, "verify": {"topic": "other", "intent": "praise", "severity": 1}, "all_agree": true}
 {"review_id": "d92ec618-19e3-4fe4-86aa-b81ccff8cba6", "enrich": {"topic": "usability", "intent": "complaint", "severity": 2}, "verify": {"topic": "usability", "intent": "complaint", "severity": 2}, "all_agree": true}
@@ -30,6 +31,7 @@
 {"review_id": "96d49d04-be49-4f65-b663-da5eb3081ad3", "enrich": {"topic": "billing", "intent": "complaint", "severity": 2}, "verify": {"topic": "billing", "intent": "complaint", "severity": 2}, "all_agree": true}
 {"review_id": "a28a1b37-0e27-4d82-9b78-a894a6b23e4c", "enrich": {"topic": "other", "intent": "unclear", "severity": 1}, "verify": {"topic": "other", "intent": "unclear", "severity": 1}, "all_agree": true}
 {"review_id": "1cb01411-8002-4b6a-88db-35a560d1d401", "enrich": {"topic": "other", "intent": "complaint", "severity": 2}, "verify": {"topic": "other", "intent": "unclear", "severity": 1}, "all_agree": false}
+{"review_id": "64865161-df86-451e-b46a-ac719995db4f", "enrich": {"topic": "billing", "intent": "complaint", "severity": 2}, "verify": {"topic": "other", "intent": "complaint", "severity": 2}, "all_agree": false}
 {"review_id": "3af4ee3b-b7fe-48b7-ada4-bc4d8cc72e77", "enrich": {"topic": "other", "intent": "praise", "severity": 1}, "verify": {"topic": "other", "intent": "praise", "severity": 1}, "all_agree": true}
 {"review_id": "6d568565-6193-4e85-91bf-d7351718604f", "enrich": {"topic": "usability", "intent": "complaint", "severity": 2}, "verify": {"topic": "billing", "intent": "complaint", "severity": 3}, "all_agree": false}
 {"review_id": "2fc65481-ed13-44c8-b3df-7977de8c0e2a", "enrich": {"topic": "other", "intent": "complaint", "severity": 2}, "verify": {"topic": "other", "intent": "complaint", "severity": 2}, "all_agree": true}
@@ -71,6 +73,7 @@
 {"review_id": "147fff0d-1770-4eeb-8d38-d5c28137649a", "enrich": {"topic": "other", "intent": "praise", "severity": 1}, "verify": {"topic": "other", "intent": "praise", "severity": 1}, "all_agree": true}
 {"review_id": "afb5ed8e-9b43-4a0e-8504-bd6cfb6a1180", "enrich": {"topic": "other", "intent": "praise", "severity": 1}, "verify": {"topic": "other", "intent": "praise", "severity": 1}, "all_agree": true}
 {"review_id": "393e3e60-22a2-4006-8e27-fe7c4da194a0", "enrich": {"topic": "billing", "intent": "praise", "severity": 1}, "verify": {"topic": "billing", "intent": "praise", "severity": 1}, "all_agree": true}
+{"review_id": "e80ee0aa-41b3-4c68-bf8c-e374d5595d10", "enrich": {"topic": "other", "intent": "praise", "severity": 1}, "verify": {"topic": "other", "intent": "praise", "severity": 1}, "all_agree": true}
 {"review_id": "c27c72ef-93ff-496b-90a0-9abf92b1a843", "enrich": {"topic": "usability", "intent": "complaint", "severity": 2}, "verify": {"topic": "usability", "intent": "complaint", "severity": 2}, "all_agree": true}
 {"review_id": "e944b2ef-4b8d-4488-8e68-a0bccf2d5f88", "enrich": {"topic": "other", "intent": "praise", "severity": 1}, "verify": {"topic": "other", "intent": "praise", "severity": 1}, "all_agree": true}
 {"review_id": "6f77be0c-db47-4a95-8d20-6f905977bb2e", "enrich": {"topic": "other", "intent": "praise", "severity": 1}, "verify": {"topic": "other", "intent": "praise", "severity": 1}, "all_agree": true}
@@ -82,12 +85,14 @@
 {"review_id": "dbc9b457-9c18-4883-8023-162d9ebdba48", "enrich": {"topic": "playback", "intent": "complaint", "severity": 3}, "verify": {"topic": "playback", "intent": "complaint", "severity": 4}, "all_agree": false}
 {"review_id": "4a4df42d-1c5e-4ca8-9525-790c18997cd6", "enrich": {"topic": "other", "intent": "complaint", "severity": 2}, "verify": {"topic": "other", "intent": "complaint", "severity": 2}, "all_agree": true}
 {"review_id": "f4130147-1f2f-41ff-97af-822626312b0d", "enrich": {"topic": "other", "intent": "complaint", "severity": 2}, "verify": {"topic": "other", "intent": "complaint", "severity": 2}, "all_agree": true}
+{"review_id": "8741af34-ec80-433b-83fb-73b78727d321", "enrich": {"topic": "catalog", "intent": "complaint", "severity": 3}, "verify": {"topic": "catalog", "intent": "complaint", "severity": 2}, "all_agree": false}
 {"review_id": "a53fc570-2028-4739-bf7b-9083688a5122", "enrich": {"topic": "usability", "intent": "complaint", "severity": 2}, "verify": {"topic": "usability", "intent": "complaint", "severity": 2}, "all_agree": true}
 {"review_id": "e60deaa6-ad3c-4386-a63c-d0e87534b712", "enrich": {"topic": "other", "intent": "praise", "severity": 1}, "verify": {"topic": "other", "intent": "praise", "severity": 1}, "all_agree": true}
 {"review_id": "64532764-5ca9-4e90-b188-8715059ff95e", "enrich": {"topic": "other", "intent": "praise", "severity": 1}, "verify": {"topic": "other", "intent": "praise", "severity": 1}, "all_agree": true}
 {"review_id": "e3756de6-93a3-4d85-a1fb-3a3a5fba5e78", "enrich": {"topic": "other", "intent": "praise", "severity": 1}, "verify": {"topic": "other", "intent": "unclear", "severity": 1}, "all_agree": false}
 {"review_id": "bee6b710-fd31-4292-998a-c23e15bbd88e", "enrich": {"topic": "playback", "intent": "complaint", "severity": 4}, "verify": {"topic": "playback", "intent": "complaint", "severity": 4}, "all_agree": true}
 {"review_id": "6008c80f-1c9a-4676-9718-5ae17517afbd", "enrich": {"topic": "other", "intent": "cancellation", "severity": 1}, "verify": {"topic": "other", "intent": "cancellation", "severity": 1}, "all_agree": true}
+{"review_id": "6a98c8cf-f122-4f02-b8d3-6c57e45837d1", "enrich": {"topic": "playback", "intent": "complaint", "severity": 3}, "verify": {"topic": "playback", "intent": "complaint", "severity": 3}, "all_agree": true}
 {"review_id": "bb477a4a-6366-4287-989a-5936b5ff4508", "enrich": {"topic": "usability", "intent": "cancellation", "severity": 2}, "verify": {"topic": "usability", "intent": "cancellation", "severity": 2}, "all_agree": true}
 {"review_id": "e675ab3b-563a-4582-ae51-f56a08a4ae79", "enrich": {"topic": "catalog", "intent": "praise", "severity": 1}, "verify": {"topic": "catalog", "intent": "praise", "severity": 1}, "all_agree": true}
 {"review_id": "798c85d0-b489-4367-aa40-e3043a0341b6", "enrich": {"topic": "catalog", "intent": "complaint", "severity": 3}, "verify": {"topic": "catalog", "intent": "complaint", "severity": 2}, "all_agree": false}
@@ -102,9 +107,11 @@
 {"review_id": "fe1f839f-a3d1-4516-9c26-d8f5c21bc18b", "enrich": {"topic": "other", "intent": "praise", "severity": 1}, "verify": {"topic": "other", "intent": "praise", "severity": 1}, "all_agree": true}
 {"review_id": "8dfb93e6-6883-46df-9242-0f1f04e55379", "enrich": {"topic": "usability", "intent": "complaint", "severity": 3}, "verify": {"topic": "playback", "intent": "complaint", "severity": 4}, "all_agree": false}
 {"review_id": "57264f4b-813e-4bf5-97c1-6d5a299d4551", "enrich": {"topic": "catalog", "intent": "praise", "severity": 1}, "verify": {"topic": "catalog", "intent": "praise", "severity": 1}, "all_agree": true}
+{"review_id": "b8a85001-183e-452c-abd0-204dacbdf2f9", "enrich": {"topic": "playback", "intent": "complaint", "severity": 3}, "verify": {"topic": "playback", "intent": "complaint", "severity": 4}, "all_agree": false}
 {"review_id": "3a6f800a-ccd4-466d-89bf-9323b58de7fc", "enrich": {"topic": "playback", "intent": "complaint", "severity": 3}, "verify": {"topic": "playback", "intent": "complaint", "severity": 3}, "all_agree": true}
 {"review_id": "bc1ad996-5bb4-42ed-861f-dd2a85ebe1e8", "enrich": {"topic": "other", "intent": "unclear", "severity": 1}, "verify": {"topic": "other", "intent": "unclear", "severity": 1}, "all_agree": true}
 {"review_id": "34cee48e-09aa-4d02-9ac1-e2ab9942e7e3", "enrich": {"topic": "other", "intent": "cancellation", "severity": 2}, "verify": {"topic": "other", "intent": "unclear", "severity": 1}, "all_agree": false}
+{"review_id": "d1ad61c9-ab42-438a-b71b-b745ed8e5ccd", "enrich": {"topic": "other", "intent": "unclear", "severity": 1}, "verify": {"topic": "other", "intent": "unclear", "severity": 1}, "all_agree": true}
 {"review_id": "0e7cd525-e6d3-4b9e-a333-aef52e5e4fe5", "enrich": {"topic": "usability", "intent": "request", "severity": 2}, "verify": {"topic": "usability", "intent": "complaint", "severity": 3}, "all_agree": false}
 {"review_id": "54be08cb-1d2d-43bc-92bc-fd5914f91260", "enrich": {"topic": "other", "intent": "unclear", "severity": 1}, "verify": {"topic": "other", "intent": "unclear", "severity": 1}, "all_agree": true}
 {"review_id": "690d207f-a165-4d81-86f6-46bcbb38ad32", "enrich": {"topic": "catalog", "intent": "praise", "severity": 1}, "verify": {"topic": "catalog", "intent": "praise", "severity": 1}, "all_agree": true}
@@ -125,6 +132,7 @@
 {"review_id": "8ecf4285-a8c2-480b-b01a-c7bd1cac0f59", "enrich": {"topic": "other", "intent": "praise", "severity": 1}, "verify": {"topic": "other", "intent": "praise", "severity": 1}, "all_agree": true}
 {"review_id": "f35cbc47-e9f8-492f-bd9f-46477c073f02", "enrich": {"topic": "playback", "intent": "complaint", "severity": 3}, "verify": {"topic": "playback", "intent": "complaint", "severity": 3}, "all_agree": true}
 {"review_id": "8a81b817-2236-4f80-ab11-4b441f212f25", "enrich": {"topic": "catalog", "intent": "complaint", "severity": 3}, "verify": {"topic": "playback", "intent": "cancellation", "severity": 4}, "all_agree": false}
+{"review_id": "8e528fae-b9c9-49bc-9c7b-155dd916bcb1", "enrich": {"topic": "usability", "intent": "complaint", "severity": 3}, "verify": {"topic": "usability", "intent": "complaint", "severity": 3}, "all_agree": true}
 {"review_id": "a6ad672b-619a-4155-8838-5492ddc5ce7e", "enrich": {"topic": "other", "intent": "complaint", "severity": 2}, "verify": {"topic": "other", "intent": "complaint", "severity": 2}, "all_agree": true}
 {"review_id": "c44c53d9-e36f-4b75-91a9-b4abc1db2374", "enrich": {"topic": "other", "intent": "unclear", "severity": 1}, "verify": {"topic": "other", "intent": "unclear", "severity": 1}, "all_agree": true}
 {"review_id": "d63d48f7-e409-472f-8a93-56687a813c11", "enrich": {"topic": "other", "intent": "praise", "severity": 1}, "verify": {"topic": "other", "intent": "praise", "severity": 1}, "all_agree": true}
@@ -136,6 +144,7 @@
 {"review_id": "f9e54b00-7222-46ea-8ce3-b42769a7a6b1", "enrich": {"topic": "other", "intent": "unclear", "severity": 1}, "verify": {"topic": "other", "intent": "unclear", "severity": 1}, "all_agree": true}
 {"review_id": "4fd4ee23-e3f1-448f-afca-38d79c9354a7", "enrich": {"topic": "usability", "intent": "complaint", "severity": 3}, "verify": {"topic": "billing", "intent": "complaint", "severity": 3}, "all_agree": false}
 {"review_id": "d3d10fe0-6408-45d6-9e34-03ad5ff49318", "enrich": {"topic": "catalog", "intent": "praise", "severity": 1}, "verify": {"topic": "catalog", "intent": "praise", "severity": 1}, "all_agree": true}
+{"review_id": "bc67c626-a55e-4041-9718-b224db217492", "enrich": {"topic": "catalog", "intent": "complaint", "severity": 3}, "verify": {"topic": "catalog", "intent": "complaint", "severity": 2}, "all_agree": false}
 {"review_id": "80e1bb01-958f-4a9e-b0e8-8c497241cfb9", "enrich": {"topic": "billing", "intent": "complaint", "severity": 3}, "verify": {"topic": "billing", "intent": "complaint", "severity": 3}, "all_agree": true}
 {"review_id": "5efb882d-b219-4555-9c2a-0ac65a2acac2", "enrich": {"topic": "usability", "intent": "complaint", "severity": 2}, "verify": {"topic": "usability", "intent": "complaint", "severity": 2}, "all_agree": true}
 {"review_id": "555b9694-41a5-46cc-802d-011611fe8a81", "enrich": {"topic": "other", "intent": "unclear", "severity": 1}, "verify": {"topic": "other", "intent": "unclear", "severity": 1}, "all_agree": true}
@@ -143,6 +152,7 @@
 {"review_id": "afaf5f75-bd59-4465-ab1f-24188de48f9a", "enrich": {"topic": "other", "intent": "complaint", "severity": 2}, "verify": {"topic": "other", "intent": "cancellation", "severity": 2}, "all_agree": false}
 {"review_id": "1cd8f41c-8020-4ee1-84df-b1dc7d99e356", "enrich": {"topic": "other", "intent": "praise", "severity": 1}, "verify": {"topic": "other", "intent": "praise", "severity": 1}, "all_agree": true}
 {"review_id": "3f73eff4-aec8-4481-be1f-98c19b34ca12", "enrich": {"topic": "other", "intent": "praise", "severity": 1}, "verify": {"topic": "other", "intent": "praise", "severity": 1}, "all_agree": true}
+{"review_id": "49ae6e59-dd3e-4c80-8375-5f1da4dc0bc3", "enrich": {"topic": "billing", "intent": "complaint", "severity": 3}, "verify": {"topic": "other", "intent": "unclear", "severity": 1}, "all_agree": false}
 {"review_id": "eec86a6a-2e2e-4d78-bc97-663269dedfbd", "enrich": {"topic": "playback", "intent": "complaint", "severity": 3}, "verify": {"topic": "playback", "intent": "complaint", "severity": 4}, "all_agree": false}
 {"review_id": "0d076f1d-41ea-415c-925f-0ce1f2880735", "enrich": {"topic": "usability", "intent": "complaint", "severity": 2}, "verify": {"topic": "usability", "intent": "complaint", "severity": 2}, "all_agree": true}
 {"review_id": "c3fbae6d-ceff-4c68-8127-976463617d5d", "enrich": {"topic": "playback", "intent": "complaint", "severity": 4}, "verify": {"topic": "playback", "intent": "complaint", "severity": 4}, "all_agree": true}
@@ -157,6 +167,7 @@
 {"review_id": "2a98d699-4b09-4545-b34f-66f683c83474", "enrich": {"topic": "other", "intent": "unclear", "severity": 1}, "verify": {"topic": "other", "intent": "unclear", "severity": 1}, "all_agree": true}
 {"review_id": "749d9a7e-c34f-441c-a6e0-a7a9317ac02a", "enrich": {"topic": "usability", "intent": "complaint", "severity": 2}, "verify": {"topic": "usability", "intent": "complaint", "severity": 2}, "all_agree": true}
 {"review_id": "25d84cc7-9458-42e7-819b-e568ce8398dd", "enrich": {"topic": "other", "intent": "praise", "severity": 1}, "verify": {"topic": "usability", "intent": "praise", "severity": 1}, "all_agree": false}
+{"review_id": "9ce73a90-d3f1-4385-b3b6-4f518723440e", "enrich": {"topic": "other", "intent": "unclear", "severity": 1}, "verify": {"topic": "other", "intent": "unclear", "severity": 1}, "all_agree": true}
 {"review_id": "562ff0c5-b1b6-4e44-bdee-6a9983b1786a", "enrich": {"topic": "billing", "intent": "complaint", "severity": 3}, "verify": {"topic": "usability", "intent": "complaint", "severity": 3}, "all_agree": false}
 {"review_id": "43cb073a-406c-4cb6-aa1f-f1d1872077e6", "enrich": {"topic": "usability", "intent": "complaint", "severity": 2}, "verify": {"topic": "usability", "intent": "complaint", "severity": 2}, "all_agree": true}
 {"review_id": "e0d3b40e-165a-455a-8b09-8a7c212388c0", "enrich": {"topic": "usability", "intent": "complaint", "severity": 3}, "verify": {"topic": "billing", "intent": "complaint", "severity": 3}, "all_agree": false}
@@ -171,6 +182,7 @@
 {"review_id": "51f43c62-9156-4fee-88c1-a1b7c3270439", "enrich": {"topic": "other", "intent": "complaint", "severity": 2}, "verify": {"topic": "other", "intent": "complaint", "severity": 2}, "all_agree": true}
 {"review_id": "be0fd5fe-0f6f-4219-9167-ff2b0d8db7a6", "enrich": {"topic": "other", "intent": "praise", "severity": 1}, "verify": {"topic": "other", "intent": "unclear", "severity": 1}, "all_agree": false}
 {"review_id": "3f39a4a1-e363-4ab8-9c26-0e711a11604d", "enrich": {"topic": "billing", "intent": "complaint", "severity": 4}, "verify": {"topic": "billing", "intent": "complaint", "severity": 4}, "all_agree": true}
+{"review_id": "f7bd794c-fbec-4c7d-955a-0504d5ecda93", "enrich": {"topic": "other", "intent": "praise", "severity": 1}, "verify": {"topic": "other", "intent": "praise", "severity": 1}, "all_agree": true}
 {"review_id": "4823846a-2ab5-4e30-9ec3-a34cfe07e2a0", "enrich": {"topic": "playback", "intent": "complaint", "severity": 3}, "verify": {"topic": "playback", "intent": "complaint", "severity": 3}, "all_agree": true}
 {"review_id": "893bfa90-8781-4a71-8183-ce6d86cec56f", "enrich": {"topic": "other", "intent": "praise", "severity": 1}, "verify": {"topic": "other", "intent": "praise", "severity": 1}, "all_agree": true}
 {"review_id": "9624ac16-2076-4a9e-8fed-cc363172e193", "enrich": {"topic": "other", "intent": "praise", "severity": 1}, "verify": {"topic": "other", "intent": "praise", "severity": 1}, "all_agree": true}
@@ -186,15 +198,3 @@
 {"review_id": "86563c0e-6e8e-4a98-984c-5732aafcfd4a", "enrich": {"topic": "usability", "intent": "complaint", "severity": 2}, "verify": {"topic": "usability", "intent": "complaint", "severity": 3}, "all_agree": false}
 {"review_id": "32d3bc18-3111-408f-a390-1cdb48128fc2", "enrich": {"topic": "usability", "intent": "complaint", "severity": 2}, "verify": {"topic": "other", "intent": "complaint", "severity": 2}, "all_agree": false}
 {"review_id": "e64244cd-2984-4015-bdad-3bb3a5268dd7", "enrich": {"topic": "other", "intent": "unclear", "severity": 1}, "verify": {"topic": "other", "intent": "unclear", "severity": 1}, "all_agree": true}
-{"review_id": "67b661d9-30c3-4c0c-bb4f-9c44b1a963ac", "enrich": {"topic": "usability", "intent": "complaint", "severity": 3}, "verify": {"topic": "usability", "intent": "complaint", "severity": 3}, "all_agree": true}
-{"review_id": "50ddb06c-6cce-4db1-8404-7c92496eac6b", "enrich": {"topic": "other", "intent": "praise", "severity": 1}, "verify": {"topic": "other", "intent": "praise", "severity": 1}, "all_agree": true}
-{"review_id": "5889df86-12c4-4e8f-aca3-4bf3f08c5a8a", "enrich": {"topic": "other", "intent": "praise", "severity": 1}, "verify": {"topic": "other", "intent": "praise", "severity": 1}, "all_agree": true}
-{"review_id": "7f8f82d0-5fd8-4b1d-aaa9-07b423218065", "enrich": {"topic": "other", "intent": "praise", "severity": 1}, "verify": {"topic": "other", "intent": "unclear", "severity": 1}, "all_agree": false}
-{"review_id": "5485484a-7c5d-4549-8a04-5ea7f8287647", "enrich": {"topic": "usability", "intent": "complaint", "severity": 2}, "verify": {"topic": "usability", "intent": "complaint", "severity": 2}, "all_agree": true}
-{"review_id": "21255a15-79f6-4ae9-a4fa-f707b263f5ed", "enrich": {"topic": "other", "intent": "unclear", "severity": 1}, "verify": {"topic": "other", "intent": "unclear", "severity": 1}, "all_agree": true}
-{"review_id": "c5c3ce00-936d-4ea1-b6a9-1c2c75ec3f5e", "enrich": {"topic": "catalog", "intent": "complaint", "severity": 3}, "verify": {"topic": "catalog", "intent": "complaint", "severity": 3}, "all_agree": true}
-{"review_id": "1ac4ec7b-d51e-4e98-98f9-dd34b29fcdb2", "enrich": {"topic": "other", "intent": "unclear", "severity": 1}, "verify": {"topic": "other", "intent": "unclear", "severity": 1}, "all_agree": true}
-{"review_id": "762a3cee-3b34-4f3b-99b5-2b1ef16301d8", "enrich": {"topic": "playback", "intent": "complaint", "severity": 4}, "verify": {"topic": "playback", "intent": "complaint", "severity": 4}, "all_agree": true}
-{"review_id": "f146eced-9c6e-4dc1-97cf-cacbef84ce70", "enrich": {"topic": "playback", "intent": "complaint", "severity": 2}, "verify": {"topic": "playback", "intent": "complaint", "severity": 2}, "all_agree": true}
-{"review_id": "9ceef1c5-c3bf-4651-bd0e-0f33c9dc4aa8", "enrich": {"topic": "other", "intent": "praise", "severity": 1}, "verify": {"topic": "other", "intent": "praise", "severity": 1}, "all_agree": true}
-{"review_id": "1ee83dd4-7337-4aa4-ab02-818ea534a4e8", "enrich": {"topic": "other", "intent": "unclear", "severity": 1}, "verify": {"topic": "other", "intent": "unclear", "severity": 1}, "all_agree": true}
