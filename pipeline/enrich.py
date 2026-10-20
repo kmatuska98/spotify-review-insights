@@ -155,13 +155,13 @@ def run(csv_path, run_dir, cap, batch_size, phase, stop_after, rates_path, worke
     stopped = None
     if stop_after is not None and len(batches) > stop_after:
         batches, stopped = batches[:stop_after], "stop_after"
-    dblock, state = threading.Lock(), {"calls": 0, "cap": False}
+    dblock, state = threading.Lock(), {"calls": 0, "cap": False, "stop": False}
     log_path = run_dir / "calls.jsonl"
 
     def process(batch):
         todo = {q[0]: q for q in batch}
         for attempt in range(MAX_ATTEMPTS):
-            if not todo or state["cap"]:
+            if not todo or state["cap"] or state["stop"]:
                 break
             ids = list(todo)
             items = [{"id": str(n + 1), "text": todo[r][1][:MAX_TEXT_CHARS]} for n, r in enumerate(ids)]
@@ -213,14 +213,25 @@ def run(csv_path, run_dir, cap, batch_size, phase, stop_after, rates_path, worke
                 db.commit()   # progress saved after every call
             if wait:
                 time.sleep(wait + random.random())
+        if state["stop"]:
+            return   # user interrupt: leave unfinished reviews pending (not failed) so a resume picks them up
         with dblock:
             for real in todo:
                 db.execute("UPDATE results SET status='failed', reason=COALESCE(reason,?) WHERE review_id=? AND label_config=? AND status!='completed'",
                            ("spend_cap_reached" if state["cap"] else "no_valid_answer", real, LABEL_CONFIG))
             db.commit()
 
-    with ThreadPoolExecutor(max_workers=workers) as pool:
+    pool = ThreadPoolExecutor(max_workers=workers)
+    try:
         list(pool.map(process, batches))
+        pool.shutdown()
+    except KeyboardInterrupt:   # Ctrl+C: stop admitting work, let in-flight requests finish and be saved, then exit
+        state["stop"] = True
+        pool.shutdown(wait=True, cancel_futures=True)
+        done = db.execute("SELECT COUNT(*) FROM results WHERE label_config=? AND status='completed'", (LABEL_CONFIG,)).fetchone()[0]
+        print(f"INTERRUPTED. Progress is saved ({done} completed). Rerun the same command with --phase resume to continue.", flush=True)
+        db.close()
+        raise SystemExit(130)
     new_calls = state["calls"]
     if state["cap"]:
         stopped = "spend_cap"

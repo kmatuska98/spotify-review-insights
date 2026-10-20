@@ -23,7 +23,7 @@ Where should the next quarter of Spotify product effort go? This repo is a multi
 | Held-out 20 (fresh, after rules were set) | topic 90%, intent 85%, severity exact 80% (within 1: 100%) | `evals/heldout_report.md` |
 | Blind verifier (Sonnet 5.5), 200 reviews | topic 84.5%, intent 90%, severity exact 83.5%, all three 69% | `results/verify_report.json` |
 | 100-review pilot (cold / warm) | 82.3 s and $0.0654 / 0.05 s, 0 calls, $0 | `cost/report.md`, `cost/pilot_runs.jsonl` |
-| Tests | 10 offline tests pass (planted bad outputs, wrong label, spend cap, resume, rate-limit and timeout recovery, injection handling); 6/6 real-model injection cases pass | `tests/`, `evals/run_injection_test.py` |
+| Tests | 11 offline tests pass (planted bad outputs, wrong label, spend cap, resume, Ctrl+C interrupt and resume, rate-limit and timeout recovery, injection handling); 6/6 real-model injection cases pass | `tests/`, `evals/run_injection_test.py` |
 
 Measured results are in the tables above; anything labeled *estimate* (calculator projections, full-corpus cost) is not a measurement.
 
