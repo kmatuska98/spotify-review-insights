@@ -10,9 +10,9 @@
   },
   "classified": 104975,
   "classified_fraction_of_labelable": 0.158906,
-  "model_calls_logged": 2997,
+  "model_calls_logged": 3022,
   "failed_calls": 5,
-  "api_cost_usd_logged": 5.4038,
+  "api_cost_usd_logged": 6.1402,
   "enrich_calls_by_attempt_number": {
     "1": 1641,
     "2": 441,
@@ -56,23 +56,23 @@
       "role": "memo",
       "model": "claude-sonnet-5-5",
       "phase": "initial",
-      "calls": 4,
+      "calls": 6,
       "failed": 0,
-      "input_tokens": 8646,
-      "output_tokens": 6000,
-      "usd": 0.0773,
-      "seconds": 52.31
+      "input_tokens": 14480,
+      "output_tokens": 9000,
+      "usd": 0.119,
+      "seconds": 77.15
     },
     {
       "role": "verify",
       "model": "claude-sonnet-5-5",
       "phase": "initial",
-      "calls": 13,
+      "calls": 36,
       "failed": 0,
-      "input_tokens": 51960,
-      "output_tokens": 22499,
-      "usd": 0.3289,
-      "seconds": 127.44
+      "input_tokens": 149025,
+      "output_tokens": 72559,
+      "usd": 1.0236,
+      "seconds": 470.91
     }
   ],
   "notes": [

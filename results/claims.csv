@@ -5,12 +5,6 @@ C02-score,ISS-064,priority_score,12431
 C03-count,ISS-018,complaint_count,2825
 C03-mean,ISS-018,mean_severity,2.617699
 C03-score,ISS-018,priority_score,7395
-C05-count,ISS-014,complaint_count,1711
-C05-mean,ISS-014,mean_severity,2.903565
-C05-score,ISS-014,priority_score,4968
-C08-count,ISS-011,complaint_count,1253
-C08-mean,ISS-011,mean_severity,3.032721
-C08-score,ISS-011,priority_score,3800
-C06-count,ISS-046,complaint_count,1179
-C06-mean,ISS-046,mean_severity,3.480916
-C06-score,ISS-046,priority_score,4104
+C01-score,ISS-044,priority_score,17727
+C01-count,ISS-044,complaint_count,8897
+C01-mean,ISS-044,mean_severity,1.992469

@@ -36,7 +36,15 @@ def main(run_dir):
     recs = [json.loads(x) for x in (run_dir / "records.jsonl").read_text(encoding="utf-8").splitlines()]
     done = [r for r in recs if r["status"] == "completed"]
     texts = {c["review_id"]: 1 for c in done}
-    summary = {"pilot_ids": len(recs), "completed": len(done), "failed_or_quarantined": len(recs) - len(done),
+    import csv as _csv
+    texts = [r["review_text"] for r in _csv.DictReader((ROOT / "data" / "cost_100.csv").open(encoding="utf-8-sig", newline=""))]
+    cfgs = sorted({r["label_config"] for r in done})
+    summary = {"provider": "Anthropic", "currency": "USD", "price_unit": "USD per million tokens (MTok), standard tier, no Batch API",
+               "effort_setting": "no extended thinking requested (model default; usage shows 0 thinking tokens)",
+               "enrich_label_config": cfgs[0] if cfgs else "", "verify_version": "verify-v1 (as measured; later runs used verify-v2)", "memo_version": "memo-v1 (as measured; later runs used memo-v2)",
+               "batch_size_enrich": 25, "workers": 1, "unique_texts": len(set(texts)), "cold_cache_hits": 0,
+               "warm_cache_hits_completed_records_served_from_saved_results": len(done),
+               "pilot_ids": len(recs), "completed": len(done), "failed_or_quarantined": len(recs) - len(done),
                "complaint_or_cancellation_records": pl["eligible_records"],
                "complaint_share": round(pl["eligible_records"] / max(1, len(done)), 4),
                "verify_sample": 20, "cold_run": cold["run_id"], "cold_wall_seconds": cold["wall_seconds"],

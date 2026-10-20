@@ -36,9 +36,9 @@ class PlantedWrongLabel(unittest.TestCase):
                 seen_by_verifier = []
 
                 class Blind(FakeModel):                # verifier gets only texts; answers independently
-                    def __call__(self, key, items, max_out, model=enrich.MODEL):
+                    def __call__(self, key, items, max_out, model=enrich.MODEL, system=None):
                         seen_by_verifier.append(items)
-                        return super().__call__(key, items, max_out, model)
+                        return super().__call__(key, items, max_out, model, system)
                 verify.call_model = Blind()
                 rep = verify.run(run, 10, 1.0, verify.VERIFY_MODEL, RATES)
             finally:

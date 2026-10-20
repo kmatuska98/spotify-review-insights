@@ -12,8 +12,20 @@ from .enrich import (Ledger, call_model, validate, system_prompt, LABEL_VERSION,
                      MAX_TEXT_CHARS)
 
 VERIFY_MODEL = "claude-sonnet-5-5"
-VERIFY_VERSION = "verify-v1"
+VERIFY_VERSION = "verify-v2"
 SEED = "a5-verify-seed-1"
+
+VERIFIER_PREFACE = (
+    "ROLE: independent VERIFIER. You are auditing a labeling pipeline. You have NOT been shown any earlier label for these "
+    "reviews and must not try to guess one. Read each review fresh and apply the definitions below strictly and literally; "
+    "when the evidence is thin, prefer topic `other`, intent `unclear`, severity 1 and set needs_review=true rather than "
+    "inferring facts. Respond ONLY by calling record_labels, with exactly one result per review id, and write no other text "
+    "(no explanations, no preamble). Keep entities to a few short words.\n\n")
+
+
+def verifier_prompt():
+    """Separate instructions for the verify role: same label definitions, different role framing."""
+    return VERIFIER_PREFACE + system_prompt().split("\n\n", 1)[1]
 
 
 def pick_sample(enrich_db, label_config, n):
@@ -45,8 +57,8 @@ def run(run_dir, n, cap, model, rates_path, batch_size=25):
                 break
             ids = list(chunk)
             items = [{"id": str(k + 1), "text": chunk[r][1][:MAX_TEXT_CHARS]} for k, r in enumerate(ids)]
-            est_in = len(system_prompt()) // 3 + sum(len(x["text"]) for x in items) // 3 + 100
-            max_out = 90 * len(ids) + 200
+            est_in = len(verifier_prompt()) // 3 + sum(len(x["text"]) for x in items) // 3 + 100
+            max_out = 140 * len(ids) + 300
             if not ledger.allows(est_in, max_out):
                 stopped = "spend_cap"; break
             started = time.time()
@@ -54,7 +66,7 @@ def run(run_dir, n, cap, model, rates_path, batch_size=25):
                      "outcome": "failed", "label_config": cfg, "input_tokens": 0, "output_tokens": 0, "cost_usd": 0.0}
             got = []
             try:
-                rid, resp = call_model(key, items, max_out, model)
+                rid, resp = call_model(key, items, max_out, model, system=verifier_prompt())
                 u = resp.get("usage", {})
                 entry.update(request_id=rid or resp.get("id", ""), input_tokens=u.get("input_tokens", 0),
                              output_tokens=u.get("output_tokens", 0), outcome="succeeded")

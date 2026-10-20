@@ -1,23 +1,27 @@
 # Memo: Which customer issues to fix first
 
 **To:** Spotify Product Team
-**Re:** Priority order from review analysis
+**Re:** Priority ranking from classified app reviews
 
-## Method
-Priority score is the complaint count multiplied by the mean severity, which is rated on a five-point scale, so frequent and painful issues rank highest.
+## How we ranked
+Priority score is the complaint count multiplied by the mean severity, so it favors issues that are both common and painful.
 
 ## Recommendation
 
-**1. Excessive ads on free plan: fix first.**
-This issue has 5575 [C02-count] complaints, a mean severity of 2.229776 [C02-mean], and a priority score of 12431 [C02-score]. It is the highest-scoring issue we can act on. One user says, "as a premium subscriber, I still get commercials," which suggests a possible ad-targeting or entitlement bug worth checking.
+**1. Excessive ads on free plan (ISS-064): fix first.** It has 5575 complaints [C02-count] with a mean severity of 2.229776 [C02-mean], for a priority score of 12431 [C02-score]. It is the highest-scoring issue we can act on directly. Customers describe it bluntly:
+- "Ad ad ad" (review 772e4e34-1c55-4fb6-8894-e5b546deeefd)
+- "as a premium subscriber, I still get commercials, but only on conservative content" (review bf99f2d0-f489-4c9e-91da-daeb6a951724)
 
-**2. Premium gating and billing friction: fix as one package.**
-Several issues share one theme, features locked behind Premium:
-- Other billing problems: 2825 [C03-count] complaints, mean severity 2.617699 [C03-mean], score 7395 [C03-score].
-- Playlist and repeat features gated to premium: 1711 [C05-count] complaints, mean severity 2.903565 [C05-mean], score 4968 [C05-score].
-- Cannot choose specific songs without premium: 1253 [C08-count] complaints, mean severity 3.032721 [C08-mean], score 3800 [C08-score].
+The second quote suggests a possible ad-targeting or entitlement bug for paying users. Check that first.
 
-A user writes, "I can't even repeat the song I've selected. It says I need Premium for that." Clearer upgrade messaging, or loosening basic controls like repeat, could address all of them at once.
+**2. Other billing problems (ISS-018): fix second.** It has 2825 complaints [C03-count] but the highest mean severity of the top three, 2.617699 [C03-mean], for a score of 7395 [C03-score]. The quotes are mostly about premium prompts rather than charges:
+- "stop putting premium on literally everything" (review c4d1559e-bbb2-43c8-9487-31f649634e9b)
+- "Provoking to get premium" (review 8bc55766-506d-4899-ad44-0fadd2b12227)
 
-**3. Playback reliability: fix in parallel with engineering capacity.**
-Playback stopping or pausing mid-song has 1179 [C06-count] complaints but the highest mean severity of the group at 3.480916 [C06-mean], for a score of 4104 [C06-score]. Users mention stuttering "after the update," so a regression check is a sensible first step. Other playback problems
+Review the frequency and placement of upgrade prompts, and consider relabeling this category.
+
+**3. General hate and uninstall requests (ISS-044): investigate, don't fix directly.** It has the top score, 17727 [C01-score], from 8897 complaints [C01-count] at a mean severity of 1.992469 [C01-mean]. But the reviews are vague:
+- "Worst app ever" (review 4cb79e53-dd8c-429e-a3ae-9938d7d135a6)
+- "Bad app" (review 6ed8ef34-784d-46c5-aa97-aa85bace76d8)
+
+There is nothing here to build against. Treat it

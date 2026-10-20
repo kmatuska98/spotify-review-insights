@@ -1,12 +1,12 @@
 {
   "verify_model": "claude-sonnet-5-5",
-  "label_config": "claude-sonnet-5-5+labels-v2+verify-v1+schema-v1",
+  "label_config": "claude-sonnet-5-5+labels-v2+verify-v2+schema-v1",
   "sample_requested": 200,
   "verified": 200,
   "agreement": {
-    "topic": 0.85,
-    "intent": 0.89,
-    "severity": 0.85,
+    "topic": 0.845,
+    "intent": 0.9,
+    "severity": 0.835,
     "within1": 0.995,
     "all_three": 0.69
   },
@@ -22,20 +22,6 @@
         "topic": "other",
         "intent": "unclear",
         "severity": 1
-      },
-      "all_agree": false
-    },
-    {
-      "review_id": "f562236a-44f9-4983-8354-62eae2a25841",
-      "enrich": {
-        "topic": "billing",
-        "intent": "complaint",
-        "severity": 2
-      },
-      "verify": {
-        "topic": "other",
-        "intent": "cancellation",
-        "severity": 2
       },
       "all_agree": false
     },
@@ -75,7 +61,7 @@
         "severity": 2
       },
       "verify": {
-        "topic": "usability",
+        "topic": "playback",
         "intent": "complaint",
         "severity": 3
       },
@@ -146,8 +132,8 @@
       },
       "verify": {
         "topic": "other",
-        "intent": "complaint",
-        "severity": 2
+        "intent": "unclear",
+        "severity": 1
       },
       "all_agree": false
     },
@@ -159,7 +145,7 @@
         "severity": 2
       },
       "verify": {
-        "topic": "billing",
+        "topic": "usability",
         "intent": "complaint",
         "severity": 3
       },
@@ -208,20 +194,6 @@
       "all_agree": false
     },
     {
-      "review_id": "aa316459-9c0a-4b70-a11f-bd08cc6ba37e",
-      "enrich": {
-        "topic": "usability",
-        "intent": "complaint",
-        "severity": 3
-      },
-      "verify": {
-        "topic": "usability",
-        "intent": "complaint",
-        "severity": 2
-      },
-      "all_agree": false
-    },
-    {
       "review_id": "e7c9f47d-ecae-4140-a74d-51bd976b6635",
       "enrich": {
         "topic": "usability",
@@ -245,6 +217,20 @@
       "verify": {
         "topic": "catalog",
         "intent": "complaint",
+        "severity": 2
+      },
+      "all_agree": false
+    },
+    {
+      "review_id": "ab87894e-a0b6-4c7a-b666-38c38407a21d",
+      "enrich": {
+        "topic": "usability",
+        "intent": "cancellation",
+        "severity": 2
+      },
+      "verify": {
+        "topic": "catalog",
+        "intent": "cancellation",
         "severity": 2
       },
       "all_agree": false
@@ -320,16 +306,16 @@
       "all_agree": false
     },
     {
-      "review_id": "798c85d0-b489-4367-aa40-e3043a0341b6",
+      "review_id": "bb477a4a-6366-4287-989a-5936b5ff4508",
       "enrich": {
-        "topic": "catalog",
-        "intent": "complaint",
-        "severity": 3
+        "topic": "usability",
+        "intent": "cancellation",
+        "severity": 2
       },
       "verify": {
-        "topic": "catalog",
-        "intent": "complaint",
-        "severity": 2
+        "topic": "usability",
+        "intent": "cancellation",
+        "severity": 3
       },
       "all_agree": false
     },
@@ -371,7 +357,7 @@
       "verify": {
         "topic": "usability",
         "intent": "complaint",
-        "severity": 2
+        "severity": 3
       },
       "all_agree": false
     },
@@ -488,6 +474,20 @@
       "all_agree": false
     },
     {
+      "review_id": "02643e4a-c1aa-4f9c-9c56-882a9955a17c",
+      "enrich": {
+        "topic": "access",
+        "intent": "cancellation",
+        "severity": 3
+      },
+      "verify": {
+        "topic": "billing",
+        "intent": "cancellation",
+        "severity": 3
+      },
+      "all_agree": false
+    },
+    {
       "review_id": "3b95d486-b7ab-45b2-b81e-d4af55e76c4e",
       "enrich": {
         "topic": "playback",
@@ -511,6 +511,20 @@
       "verify": {
         "topic": "playback",
         "intent": "cancellation",
+        "severity": 4
+      },
+      "all_agree": false
+    },
+    {
+      "review_id": "8e528fae-b9c9-49bc-9c7b-155dd916bcb1",
+      "enrich": {
+        "topic": "usability",
+        "intent": "complaint",
+        "severity": 3
+      },
+      "verify": {
+        "topic": "playback",
+        "intent": "complaint",
         "severity": 4
       },
       "all_agree": false
@@ -572,11 +586,11 @@
       "all_agree": false
     },
     {
-      "review_id": "530d7c71-6271-438f-b035-00b28dcb6a07",
+      "review_id": "80e1bb01-958f-4a9e-b0e8-8c497241cfb9",
       "enrich": {
         "topic": "billing",
-        "intent": "unclear",
-        "severity": 1
+        "intent": "complaint",
+        "severity": 3
       },
       "verify": {
         "topic": "billing",
@@ -642,16 +656,16 @@
       "all_agree": false
     },
     {
-      "review_id": "0a5c3d86-1623-41d5-b1e2-52fdbbbe3bb4",
+      "review_id": "1e352786-c3e2-4fa4-a003-43943d948d1a",
       "enrich": {
-        "topic": "other",
-        "intent": "praise",
-        "severity": 1
+        "topic": "billing",
+        "intent": "complaint",
+        "severity": 3
       },
       "verify": {
-        "topic": "catalog",
-        "intent": "praise",
-        "severity": 1
+        "topic": "billing",
+        "intent": "complaint",
+        "severity": 4
       },
       "all_agree": false
     },
@@ -824,20 +838,6 @@
       "all_agree": false
     },
     {
-      "review_id": "5bad802a-b190-42bb-92e2-f182d5ebc0d8",
-      "enrich": {
-        "topic": "other",
-        "intent": "complaint",
-        "severity": 2
-      },
-      "verify": {
-        "topic": "other",
-        "intent": "cancellation",
-        "severity": 2
-      },
-      "all_agree": false
-    },
-    {
       "review_id": "09060520-65dd-451c-86fa-2a0f74f5295c",
       "enrich": {
         "topic": "usability",
@@ -880,7 +880,7 @@
       "all_agree": false
     }
   ],
-  "new_calls_this_invocation": 1,
-  "total_spent_usd_in_run_dir": 5.365176,
+  "new_calls_this_invocation": 6,
+  "total_spent_usd_in_run_dir": 6.140154,
   "stopped_early": null
 }

@@ -2,6 +2,14 @@
 
 Rates file: cost/rates.csv (checked 2026-10-18, https://platform.claude.com/docs/en/about-claude/pricing). Rate multiplier: 1.0
 
+## Settings of the measured run
+
+| Provider | Models (exact IDs) | Effort / thinking | Prompt-schema versions | Batch size | Workers | Currency, unit |
+|---|---|---|---|---|---|---|
+| Anthropic | enrich+group: claude-haiku-5-5; verify+memo: claude-sonnet-5-5 | no extended thinking requested (model default; usage shows 0 thinking tokens) | claude-haiku-5-5+labels-v2+prompt-v1+schema-v1; verify-v1 (as measured; later runs used verify-v2); memo-v1 (as measured; later runs used memo-v2) | enrich 25 (limit 50) | 1 | USD, USD per million tokens (MTok), standard tier, no Batch API |
+
+Unique texts in the 100 pilot reviews: 100. Result-cache hits: cold 0; warm: 100 saved records served with 0 new calls.
+
 ## MEASURED on cost_100.csv (cold run, 1 worker)
 
 - IDs: 100 | completed: 100 | failed or quarantined: 0
@@ -19,6 +27,8 @@ Rates file: cost/rates.csv (checked 2026-10-18, https://platform.claude.com/docs
 Cost per 1,000 input rows: $0.6540 | per completed record: $0.000654
 (Includes the 20-review Sonnet verify sample and one memo, so per-row figures are higher than enrich alone.)
 
+Throughput (enrich, 1 worker): 3.95 reviews/s (237 per minute). Whole-chain wall clock: 82.27 s cold vs 0.05 s warm. Stage seconds (cold): enrich 25.34, verify 8.35, group 22.97, rank 0.01, memo 25.6.
+
 Local compute/infrastructure cost: UNKNOWN (not measured; not treated as zero).
 
 ## ESTIMATE: scaled from the pilot (not measured)
@@ -32,6 +42,8 @@ Assumptions (editable): verify sample 1000 reviews; base retry factor 1.0, conse
 | 100,000-review sample | 100,000 | $9.41 | $16.91 | 1.8 | OVER BUDGET |
 | 10,000 checkpoint | 10,000 | $1.98 | $2.73 | 0.2 | within budget |
 
+Output-token cap control: at a cap of 90 output tokens per review, the worst-case enrich output bill for all 660,609 reviews is $29.73 (measured average in the pilot: 75 tokens per review).
+
 Accounting: all 660,622 rows are accounted for in any scenario; 13 empty texts are quarantined ('empty_review_text'); unclassified rows are reported as unfinished, never as successes.
 
-Caveats: the first 100 reviews give an initial estimate only. Rare failures, sustained rate limits and duplicate-text reuse are not measured here. Group cost is scaled by complaint count and includes one-time menu-building overhead, so it is likely overstated at scale. Batch API discounts are NOT applied (hypothetical, not measured).
+Caveats: the first 100 reviews give an initial estimate only. Rare failures, sustained rate limits and duplicate-text reuse are not measured here. Group cost is scaled by complaint count and includes one-time menu-building overhead, so it is likely overstated at scale. Batch API discounts are NOT applied (hypothetical, not measured). The 100-review pilot was measured before the verifier and memo prompts were revised (verify-v2, memo-v2); it was not repeated, so the verify and memo stage costs here are from the earlier prompts.

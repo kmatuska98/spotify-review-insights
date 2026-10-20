@@ -1,0 +1,78 @@
+{
+  "run_id": "final-2026-10-20",
+  "base_commit_before_this_manifest": "066faa9f365334fa798c8245ca6dbb3d94a011e6",
+  "source_csv": {
+    "file": "data/spotify_reviews_18months.csv",
+    "sha256": "1fc85de68a304dd8978b537cfa58793d5f41cbaf417fa32cb53899f83a2fcef6",
+    "rows": 660622,
+    "bytes": 97400616
+  },
+  "analysis_sample": {
+    "file": "data/sample_105k.csv (regenerate: python tools/make_sample.py 105000)",
+    "rows": 105000,
+    "seed": "a5-sample-seed-1"
+  },
+  "python": "3.13.7",
+  "models": {
+    "enrich": "claude-haiku-5-5",
+    "group": "claude-haiku-5-5",
+    "verify": "claude-sonnet-5-5",
+    "memo": "claude-sonnet-5-5"
+  },
+  "settings": {
+    "thinking": "not requested (default; usage shows 0 thinking tokens)",
+    "tier": "standard (no Batch API)",
+    "enrich_batch_size": "50 (25 in the 100-review pilot)",
+    "max_attempts_per_batch_now": 2,
+    "note_on_attempts": "early part of the run used up to 3; see results/run_summary.json",
+    "workers": "1 for the pilot, 6 for the 100k extension",
+    "spend_cap_usd_final_run_dir": 6.5,
+    "prompt_text_truncation_chars": 3000,
+    "group_menu_max": 8,
+    "fallback_to_stronger_model": "not used (declared fraction 0)"
+  },
+  "prompt_sha256": {
+    "enrich_system": "4d7e912772e9123ab604b2c9297a94ea758be5b974ef4c814147b297e49676fc",
+    "verify_system": "fd31f5606beea10c1524c68258871a19908537a9e7f99735ada6d3521be09b9d",
+    "memo_template": "2d835867b393889fb52b0d9df7154c3c2697910017eeec3a32923c7bb7289b29",
+    "group_assign_template": "d92978f77efef99c4ec815235fb3b5ddbde4202f8cf6b576925b1bb67a4fd89c"
+  },
+  "versions": {
+    "labels": "labels-v2",
+    "enrich_config": "claude-haiku-5-5+labels-v2+prompt-v1+schema-v1",
+    "group_config": "claude-haiku-5-5+group-v1",
+    "memo_config": "claude-sonnet-5-5+memo-v2"
+  },
+  "rates_file": {
+    "file": "cost/rates.json",
+    "sha256": "bbf68a602749bb2c15b1ed66241e36912acc6a6fbc9d8178ac32667bcd09a0e3"
+  },
+  "output_sha256": {
+    "grading/calls.jsonl": "f55db335b769ea5754b77128d0bc388749d325bc3e017c6aa720836652f78b5c",
+    "grading/checkpoint_after.json": "36fea0a87645c342ae7d0a4380bb76bce9a12dd7a85e1d313e39dfa8d71b9461",
+    "grading/checkpoint_before.json": "0c184eed6301f8ccf67c425b35427a2d3e74c48c1bb1bbfba273e3b79414f792",
+    "grading/claims.csv": "0e607102d9eebb6bd4530ae6b9016772fc8c2eb9415d73679e0a58afceee7e5b",
+    "grading/ingestion.json": "68f7995588296dc3e2cce2674e9aa44009b1d5b1c489be021e981d2c6e3323d3",
+    "grading/membership.csv": "b3d747a6c2fcfe1a65e7a994c182550db3ad0aa1566e40a7478bd53888d9adf1",
+    "grading/memo.md": "fa4e93c668f558818729a85812e8388ca1592bb4555f5c3ff39ac729b5ee358c",
+    "grading/ranking.csv": "1426eb649b0008e24098585d44e1b53a8e572ee44b6b5af0edc081eba6850066",
+    "grading/records.jsonl.gz": "ecbee9d48055ab70e9bf215f66ae3720ff478ad62d050f5c2ca88adc0c65a591",
+    "grading/run.json": "2d3f50af0ba08dbec43b6c129fc34e1dfcd3d8d11e46e1a6bcdb9119cdef46d1",
+    "results/aggregates.csv": "23ab98c0f01744a51f9dead5dadfaddf7a560dc51ce19efc57250c6cb58297e7",
+    "results/claims.csv": "0e607102d9eebb6bd4530ae6b9016772fc8c2eb9415d73679e0a58afceee7e5b",
+    "results/dashboard_meta.json": "e743e69386da8de10baafb14d9f940bedc2f83fe058bffe6e2a13d72d05dc485",
+    "results/data_manifest.json": "07afdd96dd7f97ff5fbf967961e14d6d9f48170ba3f417399e20d5b620291011",
+    "results/group_report.json": "6d2f9cc57a2d334cf2c4e6fcc1e30cc9d36651dc3c18e6641e98eb848ddb715f",
+    "results/ingestion_report.json": "0cff51d11a969cc43b000802cc7ce225cf768add4d0d233db40764fff414885c",
+    "results/issues.json": "308bf774b306de282007d4f0b9afe4cc81b75242a5a0a69349ab06d79f194a6a",
+    "results/membership.csv": "b3d747a6c2fcfe1a65e7a994c182550db3ad0aa1566e40a7478bd53888d9adf1",
+    "results/memo.md": "fa4e93c668f558818729a85812e8388ca1592bb4555f5c3ff39ac729b5ee358c",
+    "results/memo_report.json": "e746b26aab57a63282c7d61ac32b4c98752f70f9c5c9c04b8ba22098070a6937",
+    "results/quarantine.jsonl.gz": "c66fbe51a1047a42ceb325b4a4065b849ae4b7a05f248ee842a3248a2b9c11a6",
+    "results/ranking.csv": "1426eb649b0008e24098585d44e1b53a8e572ee44b6b5af0edc081eba6850066",
+    "results/run_manifest.json": "9b231cf89a6f077908b35657e0c3c881eefdb4cc30878677ef0147f797d57476",
+    "results/run_summary.json": "987ba274fcaf4475be21db47427e6f38db0dd4d6f00c701f50888b61cf35a695",
+    "results/verification.jsonl": "5ec6e5411954cb99d10fae76f9bbc1d0d0dab322c35cfde5354ddb7015a20439",
+    "results/verify_report.json": "5e460af9a41aa522a151648df00dea9908d285c1423ad1d40aced41db5eb193d"
+  }
+}

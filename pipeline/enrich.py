@@ -76,8 +76,8 @@ class Ledger:
             self.spent += actual
 
 
-def call_model(key, batch_items, max_out, model=MODEL):
-    body = {"model": model, "max_tokens": max_out, "system": system_prompt(), "tools": [TOOL],
+def call_model(key, batch_items, max_out, model=MODEL, system=None):
+    body = {"model": model, "max_tokens": max_out, "system": system or system_prompt(), "tools": [TOOL],
             # Sonnet 5.5 rejects forced tool use (HTTP 400), so only force it for Haiku; others get "auto"
             "tool_choice": {"type": "tool", "name": "record_labels"} if model == MODEL else {"type": "auto"},
             "messages": [{"role": "user", "content": "Reviews (JSON):\n" + json.dumps(batch_items, ensure_ascii=False)}]}

@@ -38,7 +38,7 @@ class FakeModel:
     def __init__(self, plant=None):
         self.plant, self.sent, self.calls = plant, [], 0
 
-    def __call__(self, key, items, max_out, model=enrich.MODEL):
+    def __call__(self, key, items, max_out, model=enrich.MODEL, system=None):
         self.calls += 1
         self.sent += [x["text"] for x in items]
         results = [good(x["id"], x["text"]) for x in items]
@@ -136,6 +136,42 @@ class Controls(Base):
         s = self.run_enrich(fake)
         self.assertEqual(fake.calls, 0)
         self.assertEqual(s["new_calls_this_invocation"], 0)
+
+
+class TemporaryApiFailures(Base):
+    """A rate limit or network timeout must be logged as a failed call, backed off, retried once, and accounted for."""
+
+    def run_with_first_call_failing(self, exc):
+        class Flaky(FakeModel):
+            def __call__(self, key, items, max_out, model=enrich.MODEL, system=None):
+                if self.calls == 0:
+                    self.calls += 1
+                    raise exc
+                return super().__call__(key, items, max_out, model, system)
+        from unittest import mock
+        fake = Flaky()
+        with mock.patch("pipeline.enrich.time.sleep") as slept:    # no real waiting in tests
+            s = self.run_enrich(fake)
+        calls = [json.loads(x) for x in (self.dir / "run" / "calls.jsonl").read_text(encoding="utf-8").splitlines()]
+        return s, calls, slept
+
+    def test_rate_limit_is_logged_backed_off_and_retried(self):
+        import urllib.error
+        s, calls, slept = self.run_with_first_call_failing(urllib.error.HTTPError("u", 429, "Too Many Requests", {}, None))
+        self.assertEqual(calls[0]["outcome"], "failed")
+        self.assertEqual(calls[0]["note"], "HTTP 429")
+        self.assertEqual(calls[0]["cost_usd"], 0)                      # a rejected request is not billed
+        self.assertEqual(calls[1]["outcome"], "succeeded")
+        self.assertEqual(s["status_counts"], {"completed": 6})         # recovered with the one allowed retry
+        self.assertTrue(slept.called)                                  # backed off before retrying
+
+    def test_timeout_counts_worst_case_spend_because_the_charge_is_unknown(self):
+        import urllib.error
+        s, calls, _ = self.run_with_first_call_failing(urllib.error.URLError("timed out"))
+        self.assertEqual(calls[0]["outcome"], "failed")
+        self.assertIn("unknown charge", calls[0]["note"])
+        self.assertGreater(calls[0]["cost_usd"], 0)                    # never silently counted as free
+        self.assertEqual(s["status_counts"], {"completed": 6})
 
 
 class PromptInjection(Base):

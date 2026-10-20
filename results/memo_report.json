@@ -1,8 +1,20 @@
 {
   "memo_model": "claude-sonnet-5-5",
-  "prompt_sha256": "c15484efe3e34ba4f6941eaab55f41fee74035f6b5554ea92c68fc8fe276b6a7",
-  "claims_exported": 15,
+  "prompt_sha256": "91c5cbd9a95abb8303a0021892a64925b7f018e2b7b0f0171fcdc5a9122af0f3",
+  "claims_exported": 9,
   "unknown_claim_ids": [],
+  "cited_issue_and_review_ids": [
+    "4cb79e53-dd8c-429e-a3ae-9938d7d135a6",
+    "6ed8ef34-784d-46c5-aa97-aa85bace76d8",
+    "772e4e34-1c55-4fb6-8894-e5b546deeefd",
+    "8bc55766-506d-4899-ad44-0fadd2b12227",
+    "ISS-018",
+    "ISS-044",
+    "ISS-064",
+    "bf99f2d0-f489-4c9e-91da-daeb6a951724",
+    "c4d1559e-bbb2-43c8-9487-31f649634e9b"
+  ],
+  "unknown_ids": [],
   "numbers_not_in_allowed_list": [],
-  "total_spent_usd_in_run_dir": 5.403756
+  "total_spent_usd_in_run_dir": 5.935688
 }
